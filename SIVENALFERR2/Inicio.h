@@ -103,6 +103,7 @@ namespace SIVENALFERR2 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Inicio::typeid));
 			this->Menu = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->panelLogos = (gcnew System::Windows::Forms::Panel());
+			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->btn_inicio = (gcnew System::Windows::Forms::Button());
 			this->btn_solicitud = (gcnew System::Windows::Forms::Button());
 			this->btn_detalles = (gcnew System::Windows::Forms::Button());
@@ -117,16 +118,15 @@ namespace SIVENALFERR2 {
 			this->ctrolRestaurar = (gcnew System::Windows::Forms::PictureBox());
 			this->ctrolClose = (gcnew System::Windows::Forms::PictureBox());
 			this->ctrolMin = (gcnew System::Windows::Forms::PictureBox());
-			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->Menu->SuspendLayout();
 			this->panelLogos->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->BeginInit();
 			this->panelSuperior->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolClose))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Menu
@@ -156,6 +156,16 @@ namespace SIVENALFERR2 {
 			this->panelLogos->Name = L"panelLogos";
 			this->panelLogos->Size = System::Drawing::Size(146, 86);
 			this->panelLogos->TabIndex = 7;
+			// 
+			// Logo
+			// 
+			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
+			this->Logo->Location = System::Drawing::Point(9, 3);
+			this->Logo->Name = L"Logo";
+			this->Logo->Size = System::Drawing::Size(100, 80);
+			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Logo->TabIndex = 0;
+			this->Logo->TabStop = false;
 			// 
 			// btn_inicio
 			// 
@@ -358,16 +368,6 @@ namespace SIVENALFERR2 {
 			this->ctrolMin->TabStop = false;
 			this->ctrolMin->Click += gcnew System::EventHandler(this, &Inicio::ctrolMin_Click);
 			// 
-			// Logo
-			// 
-			this->Logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Logo.Image")));
-			this->Logo->Location = System::Drawing::Point(20, 3);
-			this->Logo->Name = L"Logo";
-			this->Logo->Size = System::Drawing::Size(100, 80);
-			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->Logo->TabIndex = 0;
-			this->Logo->TabStop = false;
-			// 
 			// Inicio
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -384,6 +384,7 @@ namespace SIVENALFERR2 {
 			this->Text = L"SIVENALFERR";
 			this->Menu->ResumeLayout(false);
 			this->panelLogos->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->EndInit();
 			this->panelSuperior->ResumeLayout(false);
 			this->panelSuperior->PerformLayout();
@@ -391,7 +392,6 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolClose))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->ResumeLayout(false);
 
 		}
