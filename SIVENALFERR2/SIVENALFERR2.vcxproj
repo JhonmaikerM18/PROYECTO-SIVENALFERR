@@ -120,23 +120,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="Ajustes.cpp" />
+    <ClCompile Include="Detalles.cpp" />
+    <ClCompile Include="ingresarDatos.cpp" />
     <ClCompile Include="Inicio.cpp" />
+    <ClCompile Include="Solicitando.cpp" />
+    <ClCompile Include="Solicitud.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Form1.h">
+    <ClInclude Include="Ajustes.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Detalles.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ingresarDatos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Solicitando.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Solicitud.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.h</DependentUpon>
+    <EmbeddedResource Include="Ajustes.resx">
+      <DependentUpon>Ajustes.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalles.resx">
+      <DependentUpon>Detalles.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ingresarDatos.resx">
+      <DependentUpon>ingresarDatos.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitando.resx">
+      <DependentUpon>Solicitando.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitud.resx">
+      <DependentUpon>Solicitud.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
