@@ -124,8 +124,11 @@
     <ClCompile Include="Detalles.cpp" />
     <ClCompile Include="ingresarDatos.cpp" />
     <ClCompile Include="Inicio.cpp" />
+    <ClCompile Include="InicioTemporal.cpp" />
+    <ClCompile Include="Login.cpp" />
     <ClCompile Include="Solicitando.cpp" />
     <ClCompile Include="Solicitud.cpp" />
+    <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ajustes.h">
@@ -140,10 +143,19 @@
     <ClInclude Include="Inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InicioTemporal.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Solicitando.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Solicitud.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Usuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -159,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioTemporal.resx">
+      <DependentUpon>InicioTemporal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Solicitando.resx">
       <DependentUpon>Solicitando.h</DependentUpon>

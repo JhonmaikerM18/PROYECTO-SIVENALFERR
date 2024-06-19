@@ -38,16 +38,27 @@ namespace SIVENALFERR2 {
 	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	public: System::Windows::Forms::TextBox^ textBox1;
+	private:
+	public: System::Windows::Forms::TextBox^ textBox2;
+
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox3;
+	public: System::Windows::Forms::TextBox^ textBox3;
+	private:
+
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox4;
+	public: System::Windows::Forms::TextBox^ textBox4;
+	private:
+
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox5;
+	public: System::Windows::Forms::TextBox^ textBox5;
+	private:
+
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox6;
+	public: System::Windows::Forms::TextBox^ textBox6;
+	private:
+
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label8;
@@ -110,9 +121,9 @@ namespace SIVENALFERR2 {
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(197, 7);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(100, 17);
+			this->label1->Size = System::Drawing::Size(122, 17);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Ingresar Datos";
+			this->label1->Text = L"Ingresar sus Datos";
 			// 
 			// label2
 			// 
