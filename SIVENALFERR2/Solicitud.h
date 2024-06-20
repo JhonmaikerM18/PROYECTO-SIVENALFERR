@@ -36,26 +36,35 @@ namespace SIVENALFERR2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel1;
+
 	protected:
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Label^ label2;
 
-	private: System::Windows::Forms::Panel^ panel2;
 
-	private: System::Windows::Forms::Panel^ panelVegetariano;
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Panel^ panel4;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
+
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Panel^ panel5;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
+
+	private: System::Windows::Forms::Panel^ panelMenus;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Panel^ panelVegetariano;
+	private: System::Windows::Forms::Label^ label1;
+
 
 
 
@@ -77,54 +86,32 @@ namespace SIVENALFERR2 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Solicitud::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->panelVegetariano = (gcnew System::Windows::Forms::Panel());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
-			this->panel4->SuspendLayout();
+			this->panelMenus = (gcnew System::Windows::Forms::Panel());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->panelVegetariano = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
-			this->panel3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			this->panelVegetariano->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel5->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			this->panelMenus->SuspendLayout();
+			this->panel4->SuspendLayout();
+			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panelVegetariano->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::White;
-			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(0, 26);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(806, 47);
-			this->panel1->TabIndex = 0;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(282, 10);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(199, 22);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Solicitud de Comidas";
 			// 
 			// label2
 			// 
@@ -132,31 +119,11 @@ namespace SIVENALFERR2 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(428, 89);
+			this->label2->Location = System::Drawing::Point(437, 113);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(213, 18);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Trabajadores a Cargo: ";
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::White;
-			this->panel2->Controls->Add(this->panel4);
-			this->panel2->Controls->Add(this->panel3);
-			this->panel2->Controls->Add(this->panelVegetariano);
-			this->panel2->Location = System::Drawing::Point(12, 79);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(213, 327);
-			this->panel2->TabIndex = 3;
-			// 
-			// panel4
-			// 
-			this->panel4->Controls->Add(this->label5);
-			this->panel4->Controls->Add(this->pictureBox3);
-			this->panel4->Location = System::Drawing::Point(3, 110);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(202, 76);
-			this->panel4->TabIndex = 3;
 			// 
 			// label5
 			// 
@@ -178,45 +145,6 @@ namespace SIVENALFERR2 {
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox3->TabIndex = 0;
 			this->pictureBox3->TabStop = false;
-			// 
-			// panel3
-			// 
-			this->panel3->Controls->Add(this->label4);
-			this->panel3->Controls->Add(this->pictureBox2);
-			this->panel3->Location = System::Drawing::Point(3, 223);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(202, 76);
-			this->panel3->TabIndex = 2;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(110, 7);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(54, 18);
-			this->label4->TabIndex = 1;
-			this->label4->Text = L"Dieta";
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(0, 4);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(77, 70);
-			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox2->TabIndex = 0;
-			this->pictureBox2->TabStop = false;
-			// 
-			// panelVegetariano
-			// 
-			this->panelVegetariano->Controls->Add(this->label3);
-			this->panelVegetariano->Controls->Add(this->pictureBox1);
-			this->panelVegetariano->Location = System::Drawing::Point(3, 3);
-			this->panelVegetariano->Name = L"panelVegetariano";
-			this->panelVegetariano->Size = System::Drawing::Size(202, 76);
-			this->panelVegetariano->TabIndex = 0;
 			// 
 			// label3
 			// 
@@ -280,13 +208,85 @@ namespace SIVENALFERR2 {
 			// 
 			this->pictureBox4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(740, 79);
+			this->pictureBox4->Location = System::Drawing::Point(742, 41);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(27, 18);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox4->TabIndex = 5;
 			this->pictureBox4->TabStop = false;
 			this->pictureBox4->Click += gcnew System::EventHandler(this, &Solicitud::pictureBox4_Click);
+			// 
+			// panelMenus
+			// 
+			this->panelMenus->BackColor = System::Drawing::Color::White;
+			this->panelMenus->Controls->Add(this->panel4);
+			this->panelMenus->Controls->Add(this->panel3);
+			this->panelMenus->Controls->Add(this->panelVegetariano);
+			this->panelMenus->Location = System::Drawing::Point(12, 79);
+			this->panelMenus->Name = L"panelMenus";
+			this->panelMenus->Size = System::Drawing::Size(239, 376);
+			this->panelMenus->TabIndex = 7;
+			// 
+			// panel4
+			// 
+			this->panel4->Controls->Add(this->label5);
+			this->panel4->Controls->Add(this->pictureBox3);
+			this->panel4->Location = System::Drawing::Point(15, 148);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(202, 76);
+			this->panel4->TabIndex = 3;
+			// 
+			// panel3
+			// 
+			this->panel3->Controls->Add(this->label4);
+			this->panel3->Controls->Add(this->pictureBox2);
+			this->panel3->Location = System::Drawing::Point(15, 264);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(202, 76);
+			this->panel3->TabIndex = 2;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(110, 7);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(54, 18);
+			this->label4->TabIndex = 1;
+			this->label4->Text = L"Dieta";
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(0, 4);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(77, 70);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 0;
+			this->pictureBox2->TabStop = false;
+			// 
+			// panelVegetariano
+			// 
+			this->panelVegetariano->Controls->Add(this->label3);
+			this->panelVegetariano->Controls->Add(this->pictureBox1);
+			this->panelVegetariano->Location = System::Drawing::Point(15, 30);
+			this->panelVegetariano->Name = L"panelVegetariano";
+			this->panelVegetariano->Size = System::Drawing::Size(202, 76);
+			this->panelVegetariano->TabIndex = 0;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(245, 26);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(296, 33);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Solicitud de Comidas";
 			// 
 			// Solicitud
 			// 
@@ -295,29 +295,27 @@ namespace SIVENALFERR2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(133)),
 				static_cast<System::Int32>(static_cast<System::Byte>(127)));
 			this->ClientSize = System::Drawing::Size(804, 476);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->panelMenus);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->panel5);
-			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Solicitud";
 			this->Text = L"Solicitud";
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
-			this->panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			this->panelMenus->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panelVegetariano->ResumeLayout(false);
 			this->panelVegetariano->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			this->panel5->ResumeLayout(false);
-			this->panel5->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

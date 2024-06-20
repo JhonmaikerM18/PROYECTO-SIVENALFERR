@@ -164,6 +164,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Acerca.resx">
+      <DependentUpon>Acerca.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ajustes.resx">
       <DependentUpon>Ajustes.h</DependentUpon>
     </EmbeddedResource>

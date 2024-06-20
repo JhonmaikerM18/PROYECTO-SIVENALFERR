@@ -34,6 +34,10 @@ namespace SIVENALFERR2 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	protected:
+
+	protected:
 
 	private:
 		/// <summary>
@@ -48,11 +52,35 @@ namespace SIVENALFERR2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Acerca";
-			this->Padding = System::Windows::Forms::Padding(0);
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Acerca::typeid));
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->SuspendLayout();
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(12, 2);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(401, 428);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
+			// 
+			// Acerca
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(105)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->ClientSize = System::Drawing::Size(804, 476);
+			this->Controls->Add(this->pictureBox1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Name = L"Acerca";
+			this->Text = L"Acerca";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};
