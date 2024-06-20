@@ -69,7 +69,7 @@ namespace SIVENALFERR2 {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(142, 27);
+			this->pictureBox1->Location = System::Drawing::Point(148, 27);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(496, 412);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -87,6 +87,7 @@ namespace SIVENALFERR2 {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(804, 49);
 			this->panel1->TabIndex = 3;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Logo::panel1_Paint);
 			// 
 			// lblFecha
 			// 
@@ -100,6 +101,7 @@ namespace SIVENALFERR2 {
 			this->lblFecha->Size = System::Drawing::Size(60, 24);
 			this->lblFecha->TabIndex = 1;
 			this->lblFecha->Text = L"label1";
+			this->lblFecha->Click += gcnew System::EventHandler(this, &Logo::lblFecha_Click);
 			// 
 			// lblHora
 			// 
@@ -112,6 +114,7 @@ namespace SIVENALFERR2 {
 			this->lblHora->Size = System::Drawing::Size(60, 24);
 			this->lblHora->TabIndex = 0;
 			this->lblHora->Text = L"label1";
+			this->lblHora->Click += gcnew System::EventHandler(this, &Logo::lblHora_Click);
 			// 
 			// Hora
 			// 
@@ -139,5 +142,11 @@ namespace SIVENALFERR2 {
 		lblHora->Text = System::DateTime::Now.ToLongTimeString();
 		lblFecha->Text = System::DateTime::Now.ToShortDateString();
 	}
+private: System::Void lblFecha_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void lblHora_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }
