@@ -1,5 +1,5 @@
 #pragma once
-
+#include <Windows.h>
 namespace SIVENALFERR2 {
 
 	using namespace System;
@@ -8,12 +8,12 @@ namespace SIVENALFERR2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	/// <summary>
 	/// Resumen de Login
 	/// </summary>
 	public ref class Login : public System::Windows::Forms::Form
 	{
+
 	public:
 		Login(void)
 		{
@@ -83,6 +83,7 @@ namespace SIVENALFERR2 {
 			this->button2->TabIndex = 34;
 			this->button2->Text = L"Cancelar";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
 			// 
 			// button1
 			// 
@@ -102,6 +103,7 @@ namespace SIVENALFERR2 {
 			// 
 			// textBox7
 			// 
+			this->textBox7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->textBox7->Location = System::Drawing::Point(173, 116);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(145, 20);
@@ -120,6 +122,7 @@ namespace SIVENALFERR2 {
 			// 
 			// textBox1
 			// 
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->textBox1->Location = System::Drawing::Point(173, 76);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(145, 20);
@@ -132,9 +135,9 @@ namespace SIVENALFERR2 {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(26, 79);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(92, 17);
+			this->label2->Size = System::Drawing::Size(100, 17);
 			this->label2->TabIndex = 19;
-			this->label2->Text = L"Identificaión:";
+			this->label2->Text = L"Identificación:";
 			// 
 			// panel1
 			// 
@@ -149,12 +152,12 @@ namespace SIVENALFERR2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(131, 9);
+			this->label1->Location = System::Drawing::Point(125, 5);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(99, 17);
+			this->label1->Size = System::Drawing::Size(120, 21);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Iniciar sección";
 			// 
@@ -172,6 +175,7 @@ namespace SIVENALFERR2 {
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Login";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -181,5 +185,8 @@ namespace SIVENALFERR2 {
 		}
 #pragma endregion
 
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }

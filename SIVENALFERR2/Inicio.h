@@ -1,8 +1,8 @@
 #pragma once
 #include "Solicitud.h"
 #include "Ajustes.h"
-#include "InicioTemporal.h"
 #include "Detalles.h"
+#include "Logo.h"
 
 namespace SIVENALFERR2 {
 
@@ -20,6 +20,8 @@ namespace SIVENALFERR2 {
 	/// </summary>
 	public ref class Inicio : public System::Windows::Forms::Form
 	{
+	private:
+
 	public:
 		Inicio(void)
 		{
@@ -27,6 +29,7 @@ namespace SIVENALFERR2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+
 		}
 
 	protected:
@@ -41,7 +44,7 @@ namespace SIVENALFERR2 {
 			}
 		}
 	private: System::Windows::Forms::FlowLayoutPanel^ Menu;
-	private: System::Windows::Forms::Button^ btn_inicio;
+
 	private: System::Windows::Forms::Button^ btn_solicitud;
 	private: System::Windows::Forms::Button^ btn_detalles;
 	private: System::Windows::Forms::Button^ btn_ajustes;
@@ -78,14 +81,6 @@ namespace SIVENALFERR2 {
 
 
 	
-	
-
-
-
-
-
-
-
 
 
 
@@ -121,7 +116,6 @@ namespace SIVENALFERR2 {
 			this->Menu = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->arrastrarVentanaMenu = (gcnew System::Windows::Forms::Panel());
 			this->arrastrarVentanaL2 = (gcnew System::Windows::Forms::Label());
-			this->btn_inicio = (gcnew System::Windows::Forms::Button());
 			this->btn_solicitud = (gcnew System::Windows::Forms::Button());
 			this->btn_detalles = (gcnew System::Windows::Forms::Button());
 			this->btn_usuario = (gcnew System::Windows::Forms::Button());
@@ -151,7 +145,6 @@ namespace SIVENALFERR2 {
 			this->Menu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(4)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			this->Menu->Controls->Add(this->arrastrarVentanaMenu);
-			this->Menu->Controls->Add(this->btn_inicio);
 			this->Menu->Controls->Add(this->btn_solicitud);
 			this->Menu->Controls->Add(this->btn_detalles);
 			this->Menu->Controls->Add(this->btn_usuario);
@@ -170,7 +163,7 @@ namespace SIVENALFERR2 {
 			this->arrastrarVentanaMenu->Controls->Add(this->arrastrarVentanaL2);
 			this->arrastrarVentanaMenu->Location = System::Drawing::Point(3, 3);
 			this->arrastrarVentanaMenu->Name = L"arrastrarVentanaMenu";
-			this->arrastrarVentanaMenu->Size = System::Drawing::Size(152, 23);
+			this->arrastrarVentanaMenu->Size = System::Drawing::Size(152, 41);
 			this->arrastrarVentanaMenu->TabIndex = 8;
 			this->arrastrarVentanaMenu->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Inicio::arrastrarVentana2);
 			// 
@@ -182,26 +175,6 @@ namespace SIVENALFERR2 {
 			this->arrastrarVentanaL2->Size = System::Drawing::Size(0, 13);
 			this->arrastrarVentanaL2->TabIndex = 0;
 			// 
-			// btn_inicio
-			// 
-			this->btn_inicio->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_inicio->FlatAppearance->BorderSize = 0;
-			this->btn_inicio->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_inicio->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btn_inicio->ForeColor = System::Drawing::Color::White;
-			this->btn_inicio->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_inicio.Image")));
-			this->btn_inicio->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_inicio->Location = System::Drawing::Point(3, 59);
-			this->btn_inicio->Margin = System::Windows::Forms::Padding(3, 30, 3, 3);
-			this->btn_inicio->Name = L"btn_inicio";
-			this->btn_inicio->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
-			this->btn_inicio->Size = System::Drawing::Size(146, 41);
-			this->btn_inicio->TabIndex = 2;
-			this->btn_inicio->Text = L"   Inicio";
-			this->btn_inicio->UseVisualStyleBackColor = true;
-			this->btn_inicio->Click += gcnew System::EventHandler(this, &Inicio::btn_inicio_Click);
-			// 
 			// btn_solicitud
 			// 
 			this->btn_solicitud->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -212,7 +185,7 @@ namespace SIVENALFERR2 {
 			this->btn_solicitud->ForeColor = System::Drawing::Color::White;
 			this->btn_solicitud->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_solicitud.Image")));
 			this->btn_solicitud->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_solicitud->Location = System::Drawing::Point(3, 106);
+			this->btn_solicitud->Location = System::Drawing::Point(3, 50);
 			this->btn_solicitud->Name = L"btn_solicitud";
 			this->btn_solicitud->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->btn_solicitud->Size = System::Drawing::Size(146, 41);
@@ -231,7 +204,7 @@ namespace SIVENALFERR2 {
 			this->btn_detalles->ForeColor = System::Drawing::Color::White;
 			this->btn_detalles->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_detalles.Image")));
 			this->btn_detalles->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_detalles->Location = System::Drawing::Point(3, 153);
+			this->btn_detalles->Location = System::Drawing::Point(3, 97);
 			this->btn_detalles->Name = L"btn_detalles";
 			this->btn_detalles->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->btn_detalles->Size = System::Drawing::Size(146, 41);
@@ -250,7 +223,7 @@ namespace SIVENALFERR2 {
 			this->btn_usuario->ForeColor = System::Drawing::Color::White;
 			this->btn_usuario->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_usuario.Image")));
 			this->btn_usuario->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_usuario->Location = System::Drawing::Point(3, 200);
+			this->btn_usuario->Location = System::Drawing::Point(3, 144);
 			this->btn_usuario->Name = L"btn_usuario";
 			this->btn_usuario->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->btn_usuario->Size = System::Drawing::Size(146, 41);
@@ -267,7 +240,7 @@ namespace SIVENALFERR2 {
 			this->btn_ajustes->ForeColor = System::Drawing::Color::White;
 			this->btn_ajustes->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_ajustes.Image")));
 			this->btn_ajustes->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_ajustes->Location = System::Drawing::Point(3, 247);
+			this->btn_ajustes->Location = System::Drawing::Point(3, 191);
 			this->btn_ajustes->Name = L"btn_ajustes";
 			this->btn_ajustes->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->btn_ajustes->Size = System::Drawing::Size(146, 41);
@@ -296,6 +269,7 @@ namespace SIVENALFERR2 {
 			// 
 			// panelContenedor
 			// 
+			this->panelContenedor->BackColor = System::Drawing::Color::Transparent;
 			this->panelContenedor->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelContenedor->Location = System::Drawing::Point(155, 0);
 			this->panelContenedor->Name = L"panelContenedor";
@@ -405,11 +379,13 @@ namespace SIVENALFERR2 {
 			this->Controls->Add(this->panelSuperior);
 			this->Controls->Add(this->panelContenedor);
 			this->Controls->Add(this->Menu);
+			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Inicio";
 			this->Opacity = 0.98;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"SIVENALFERR";
+			this->Load += gcnew System::EventHandler(this, &Inicio::Inicio_Load);
 			this->Menu->ResumeLayout(false);
 			this->arrastrarVentanaMenu->ResumeLayout(false);
 			this->arrastrarVentanaMenu->PerformLayout();
@@ -448,14 +424,14 @@ private: System::Void Tiempo_menu_tick(System::Object^ sender, System::EventArgs
 	}
 }
 	template<class t>
-	void AbrirFormDelPanel(t fh)
+	void AbrirFormDelPanel(t fromhijo)
 	{
 		   if (this->panelContenedor->Controls->Count > 0)
 			   this->panelContenedor->Controls->RemoveAt(0);
-		   fh->TopLevel = false;
-		   fh->Dock = DockStyle::Fill;
-		   this->panelContenedor->Controls->Add(fh);
-		   this->panelContenedor->Tag = fh;
+		   fromhijo->TopLevel = false;
+		   fromhijo->Dock = DockStyle::Fill;
+		   this->panelContenedor->Controls->Add(fromhijo);
+		   this->panelContenedor->Tag = fromhijo;
 		   
 		   if (MenuExpandible == true || MenuExpandible == false) {
 			   Menu->Width -= 10;
@@ -465,17 +441,14 @@ private: System::Void Tiempo_menu_tick(System::Object^ sender, System::EventArgs
 				   Tiempo_menu->Stop();
 			   }
 		   }
-		   fh->Show();
+		   fromhijo->Show();
 	}
 
 
 private: System::Void click_menu_Click(System::Object^ sender, System::EventArgs^ e) {
 	Tiempo_menu->Start();
 }
-private: System::Void btn_inicio_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->AbrirFormDelPanel(gcnew SIVENALFERR2::InicioTemporal);
-}
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void ctrolClose_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -538,6 +511,9 @@ private: System::Void arrastrarVentana2(System::Object^ sender, System::Windows:
 		ctrolMax->Visible = true;
 		this->Location = System::Drawing::Point(this->Location.X + e->X - arrastrarVentanaL2->Left, this->Location.Y + e->Y - arrastrarVentanaL2->Top);
 	}
+}
+private: System::Void Inicio_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirFormDelPanel(gcnew Logo);
 }
 };
 

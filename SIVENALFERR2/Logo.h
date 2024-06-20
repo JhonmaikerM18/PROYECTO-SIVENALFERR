@@ -10,12 +10,12 @@ namespace SIVENALFERR2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Resumen de InicioTemporal
+	/// Resumen de Logo
 	/// </summary>
-	public ref class InicioTemporal : public System::Windows::Forms::Form
+	public ref class Logo : public System::Windows::Forms::Form
 	{
 	public:
-		InicioTemporal(void)
+		Logo(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace SIVENALFERR2 {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~InicioTemporal()
+		~Logo()
 		{
 			if (components)
 			{
@@ -56,7 +56,7 @@ namespace SIVENALFERR2 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InicioTemporal::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Logo::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->lblFecha = (gcnew System::Windows::Forms::Label());
@@ -69,9 +69,9 @@ namespace SIVENALFERR2 {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(219, 82);
+			this->pictureBox1->Location = System::Drawing::Point(142, 27);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(267, 267);
+			this->pictureBox1->Size = System::Drawing::Size(496, 412);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -83,53 +83,51 @@ namespace SIVENALFERR2 {
 			this->panel1->Controls->Add(this->lblFecha);
 			this->panel1->Controls->Add(this->lblHora);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel1->Location = System::Drawing::Point(0, 399);
+			this->panel1->Location = System::Drawing::Point(0, 427);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(804, 77);
-			this->panel1->TabIndex = 1;
+			this->panel1->Size = System::Drawing::Size(804, 49);
+			this->panel1->TabIndex = 3;
 			// 
 			// lblFecha
 			// 
 			this->lblFecha->AutoSize = true;
-			this->lblFecha->BackColor = System::Drawing::Color::Transparent;
-			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblFecha->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
-				static_cast<System::Int32>(static_cast<System::Byte>(200)));
-			this->lblFecha->Location = System::Drawing::Point(547, 38);
+			this->lblFecha->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->lblFecha->Location = System::Drawing::Point(482, 15);
 			this->lblFecha->Name = L"lblFecha";
-			this->lblFecha->Size = System::Drawing::Size(0, 23);
+			this->lblFecha->Size = System::Drawing::Size(60, 24);
 			this->lblFecha->TabIndex = 1;
+			this->lblFecha->Text = L"label1";
 			// 
 			// lblHora
 			// 
 			this->lblHora->AutoSize = true;
-			this->lblHora->BackColor = System::Drawing::Color::Transparent;
-			this->lblHora->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblHora->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblHora->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
-				static_cast<System::Int32>(static_cast<System::Byte>(200)));
-			this->lblHora->Location = System::Drawing::Point(553, 15);
+			this->lblHora->ForeColor = System::Drawing::Color::Blue;
+			this->lblHora->Location = System::Drawing::Point(244, 15);
 			this->lblHora->Name = L"lblHora";
-			this->lblHora->Size = System::Drawing::Size(0, 23);
+			this->lblHora->Size = System::Drawing::Size(60, 24);
 			this->lblHora->TabIndex = 0;
+			this->lblHora->Text = L"label1";
 			// 
 			// Hora
 			// 
 			this->Hora->Enabled = true;
-			this->Hora->Tick += gcnew System::EventHandler(this, &InicioTemporal::Hora_Tick);
+			this->Hora->Tick += gcnew System::EventHandler(this, &Logo::Hora_Tick);
 			// 
-			// InicioTemporal
+			// Logo
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(804, 476);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"InicioTemporal";
-			this->Text = L"InicioTemporal";
+			this->Name = L"Logo";
+			this->Text = L"Logo";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();

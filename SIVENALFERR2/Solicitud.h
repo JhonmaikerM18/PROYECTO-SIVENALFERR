@@ -1,5 +1,6 @@
 #pragma once
 #include "Solicitando.h"
+#include "Login.h"
 
 namespace SIVENALFERR2 {
 
@@ -116,7 +117,7 @@ namespace SIVENALFERR2 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(247, 11);
+			this->label1->Location = System::Drawing::Point(282, 10);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(199, 22);
 			this->label1->TabIndex = 0;
@@ -128,7 +129,7 @@ namespace SIVENALFERR2 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(468, 89);
+			this->label2->Location = System::Drawing::Point(428, 89);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(213, 18);
 			this->label2->TabIndex = 1;
@@ -241,7 +242,7 @@ namespace SIVENALFERR2 {
 				static_cast<System::Int32>(static_cast<System::Byte>(137)));
 			this->panel5->Controls->Add(this->button1);
 			this->panel5->Controls->Add(this->label6);
-			this->panel5->Location = System::Drawing::Point(434, 309);
+			this->panel5->Location = System::Drawing::Point(409, 309);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(272, 100);
 			this->panel5->TabIndex = 4;
@@ -252,7 +253,7 @@ namespace SIVENALFERR2 {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(105, 44);
+			this->button1->Location = System::Drawing::Point(95, 41);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 28);
 			this->button1->TabIndex = 1;
@@ -306,8 +307,8 @@ namespace SIVENALFERR2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Solicitando^ solicitando = gcnew Solicitando();
-		solicitando->ShowDialog();
+		Login^ Iniciar = gcnew Login();
+		Iniciar->ShowDialog();
 	}
 };
 }

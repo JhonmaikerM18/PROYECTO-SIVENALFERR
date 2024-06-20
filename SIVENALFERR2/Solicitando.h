@@ -95,7 +95,7 @@ namespace SIVENALFERR2 {
 			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->panel3);
 			this->panel2->Controls->Add(this->panelVegetariano);
-			this->panel2->Location = System::Drawing::Point(11, 100);
+			this->panel2->Location = System::Drawing::Point(12, 65);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(213, 327);
 			this->panel2->TabIndex = 7;
@@ -196,7 +196,7 @@ namespace SIVENALFERR2 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(527, 110);
+			this->label2->Location = System::Drawing::Point(527, 80);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(213, 18);
 			this->label2->TabIndex = 6;
@@ -206,7 +206,7 @@ namespace SIVENALFERR2 {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(-1, 47);
+			this->panel1->Location = System::Drawing::Point(0, 12);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(806, 47);
 			this->panel1->TabIndex = 5;
