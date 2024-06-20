@@ -78,6 +78,7 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Timer^ Hora;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Panel^ panelControlSuperior;
+	private: System::Windows::Forms::Button^ btn_acerca;
 
 
 
@@ -144,6 +145,7 @@ namespace SIVENALFERR2 {
 			this->Hora = (gcnew System::Windows::Forms::Timer(this->components));
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelControlSuperior = (gcnew System::Windows::Forms::Panel());
+			this->btn_acerca = (gcnew System::Windows::Forms::Button());
 			this->Menu->SuspendLayout();
 			this->arrastrarVentanaMenu->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->BeginInit();
@@ -168,6 +170,7 @@ namespace SIVENALFERR2 {
 			this->Menu->Controls->Add(this->btn_detalles);
 			this->Menu->Controls->Add(this->btn_usuario);
 			this->Menu->Controls->Add(this->btn_ajustes);
+			this->Menu->Controls->Add(this->btn_acerca);
 			this->Menu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->Menu->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->Menu->Location = System::Drawing::Point(0, 0);
@@ -463,6 +466,24 @@ namespace SIVENALFERR2 {
 			this->panelControlSuperior->Name = L"panelControlSuperior";
 			this->panelControlSuperior->Size = System::Drawing::Size(92, 23);
 			this->panelControlSuperior->TabIndex = 5;
+			// 
+			// btn_acerca
+			// 
+			this->btn_acerca->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_acerca->FlatAppearance->BorderSize = 0;
+			this->btn_acerca->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_acerca->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_acerca->ForeColor = System::Drawing::Color::White;
+			this->btn_acerca->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_acerca.Image")));
+			this->btn_acerca->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_acerca->Location = System::Drawing::Point(3, 238);
+			this->btn_acerca->Name = L"btn_acerca";
+			this->btn_acerca->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
+			this->btn_acerca->Size = System::Drawing::Size(146, 41);
+			this->btn_acerca->TabIndex = 9;
+			this->btn_acerca->Text = L"   Acerca";
+			this->btn_acerca->UseVisualStyleBackColor = true;
 			// 
 			// Inicio
 			// 

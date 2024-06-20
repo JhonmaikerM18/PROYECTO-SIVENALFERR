@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acerca.cpp" />
     <ClCompile Include="Ajustes.cpp" />
     <ClCompile Include="Detalles.cpp" />
     <ClCompile Include="ingresarDatos.cpp" />
@@ -131,6 +132,9 @@
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Acerca.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Ajustes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
