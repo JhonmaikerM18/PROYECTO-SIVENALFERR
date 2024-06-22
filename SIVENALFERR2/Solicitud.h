@@ -328,5 +328,6 @@ namespace SIVENALFERR2 {
 private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
+
 };
 }
