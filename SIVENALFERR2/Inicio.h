@@ -308,7 +308,6 @@ namespace SIVENALFERR2 {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(665, 37);
 			this->panel1->TabIndex = 4;
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Inicio::panel1_Paint_1);
 			// 
 			// lblFecha
 			// 
@@ -513,27 +512,29 @@ private: System::Void Tiempo_menu_tick(System::Object^ sender, System::EventArgs
 	}
 }
 
-	// Función para abrir un formulario
- template <typename MiForm>
- void AbrirFormulario(Control^ panelFormularios) {
-	 Form^ formulario = gcnew MiForm();
-	 formulario->TopLevel = false;
-	 formulario->Dock = DockStyle::Fill;
-	 panelFormularios->Controls->Add(formulario);
-	 panelFormularios->Tag = formulario;
+// Función para abrir un formulario
+void CambiarFormulario(Control^ panelContenedor, Form^ formularioNuevo) {
+ // Verificar si hay un formulario actual abierto
 
-	 if (MenuExpandido) {
-		 Menu->Width -= 10;
-		 Tiempo_menu->Start();
-		 if (Menu->Width == Menu->MinimumSize.Width) {
-			 MenuExpandido = false;
-			 Tiempo_menu->Stop();
-		 }
-	 }
+// Crear una nueva instancia del formulario que deseas abrir
+formularioNuevo->TopLevel = false;
+formularioNuevo->Dock = DockStyle::Fill;
+panelContenedor->Controls->Add(formularioNuevo);
+panelContenedor->Tag = formularioNuevo;
+//Cerrar el menu automaticamente
+	   if (MenuExpandido) {
+		   Menu->Width -= 10;
+		   Tiempo_menu->Start();
+		   if (Menu->Width == Menu->MinimumSize.Width) {
+			   MenuExpandido = false;
+			   Tiempo_menu->Stop();
+		   }
+	   }
+	 
+	 formularioNuevo->Show();
+	 formularioNuevo->BringToFront();
+	}
 
-	 formulario->Show();
-	 formulario->BringToFront();
- }
 
 
 private: System::Void click_menu_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -575,13 +576,16 @@ private: System::Void ctrolMin_Click(System::Object^ sender, System::EventArgs^ 
 }
 
 private: System::Void btn_solicitud_Click(System::Object^ sender, System::EventArgs^ e) {
-	AbrirFormulario<Solicitud>(panelContenedor);
+	Solicitud^ Formulario = gcnew Solicitud();
+	CambiarFormulario(panelContenedor, Formulario);
 }
 private: System::Void btn_ajustes_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	Ajustes^ Formulario = gcnew Ajustes();
+	CambiarFormulario(panelContenedor, Formulario);
 }
 private: System::Void btn_detalles_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	Detalles^ Formulario = gcnew Detalles();
+	CambiarFormulario(panelContenedor, Formulario);
 }
 
 
@@ -607,10 +611,9 @@ private: System::Void Hora_Tick(System::Object^ sender, System::EventArgs^ e) {
 	lblHora->Text = System::DateTime::Now.ToLongTimeString();
 	lblFecha->Text = System::DateTime::Now.ToShortDateString();
 }
-private: System::Void panel1_Paint_1(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
 private: System::Void btn_acerca_Click(System::Object^ sender, System::EventArgs^ e) {
-	AbrirFormulario<Acerca>(panelContenedor);
+	Acerca^ Formulario = gcnew Acerca();
+	CambiarFormulario(panelContenedor, Formulario);
 }
 };
 }
