@@ -1,5 +1,5 @@
 #pragma once
-#include "ingresarDatos.h"
+#include "registroSupervisor.h"
 namespace SIVENALFERR2 {
 
 	using namespace System;
@@ -43,7 +43,7 @@ namespace SIVENALFERR2 {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -111,7 +111,7 @@ namespace SIVENALFERR2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		ingresarDatos^ Formulario = gcnew ingresarDatos();
+		registroSupervisor^ Formulario = gcnew registroSupervisor();
 		Formulario->ShowDialog();
 	}
 	};

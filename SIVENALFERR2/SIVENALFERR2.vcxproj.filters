@@ -24,7 +24,7 @@
     <ClCompile Include="Detalles.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ingresarDatos.cpp">
+    <ClCompile Include="registroSupervisor.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Ajustes.cpp">
@@ -59,7 +59,7 @@
     <ClInclude Include="Detalles.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ingresarDatos.h">
+    <ClInclude Include="registroSupervisor.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Login.h">

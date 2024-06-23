@@ -9,12 +9,12 @@ namespace SIVENALFERR2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Resumen de ingresarDatos
+	/// Resumen de registroSupervisor
 	/// </summary>
-	public ref class ingresarDatos : public System::Windows::Forms::Form
+	public ref class registroSupervisor : public System::Windows::Forms::Form
 	{
 	public:
-		ingresarDatos(void)
+		registroSupervisor(void)
 		{
 			InitializeComponent();
 			//
@@ -26,7 +26,7 @@ namespace SIVENALFERR2 {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~ingresarDatos()
+		~registroSupervisor()
 		{
 			if (components)
 			{
@@ -77,7 +77,7 @@ namespace SIVENALFERR2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ingresarDatos::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(registroSupervisor::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());

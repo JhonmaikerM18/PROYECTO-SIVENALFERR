@@ -97,12 +97,13 @@ namespace SIVENALFERR2 {
 			this->btn_supervisor = (gcnew System::Windows::Forms::Button());
 			this->btn_ajustes = (gcnew System::Windows::Forms::Button());
 			this->btn_acerca = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->lblFecha = (gcnew System::Windows::Forms::Label());
+			this->lblHora = (gcnew System::Windows::Forms::Label());
 			this->click_menu = (gcnew System::Windows::Forms::PictureBox());
 			this->Tiempo_menu = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelContenedor = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->lblFecha = (gcnew System::Windows::Forms::Label());
-			this->lblHora = (gcnew System::Windows::Forms::Label());
 			this->panelSuperior = (gcnew System::Windows::Forms::Panel());
 			this->panelControlSuperior = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
@@ -113,9 +114,9 @@ namespace SIVENALFERR2 {
 			this->text_superior = (gcnew System::Windows::Forms::Label());
 			this->ctrolRestaurar = (gcnew System::Windows::Forms::PictureBox());
 			this->Hora = (gcnew System::Windows::Forms::Timer(this->components));
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->Menu->SuspendLayout();
 			this->arrastrarVentanaMenu->SuspendLayout();
+			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->BeginInit();
 			this->panelContenedor->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -126,9 +127,10 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->BeginInit();
-			this->panel2->SuspendLayout();
 			this->SuspendLayout();
+			// 
 			// Menu
+			// 
 			this->Menu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(4)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			this->Menu->Controls->Add(this->arrastrarVentanaMenu);
@@ -137,7 +139,6 @@ namespace SIVENALFERR2 {
 			this->Menu->Controls->Add(this->btn_supervisor);
 			this->Menu->Controls->Add(this->btn_ajustes);
 			this->Menu->Controls->Add(this->btn_acerca);
-			this->Menu->Controls->Add(this->panel2);
 			this->Menu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->Menu->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->Menu->Location = System::Drawing::Point(0, 0);
@@ -146,20 +147,26 @@ namespace SIVENALFERR2 {
 			this->Menu->Name = L"Menu";
 			this->Menu->Size = System::Drawing::Size(42, 515);
 			this->Menu->TabIndex = 0;
+			// 
 			// arrastrarVentanaMenu
+			// 
 			this->arrastrarVentanaMenu->Controls->Add(this->arrastrarVentanaL2);
 			this->arrastrarVentanaMenu->Location = System::Drawing::Point(3, 3);
 			this->arrastrarVentanaMenu->Name = L"arrastrarVentanaMenu";
 			this->arrastrarVentanaMenu->Size = System::Drawing::Size(152, 41);
 			this->arrastrarVentanaMenu->TabIndex = 8;
 			this->arrastrarVentanaMenu->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Inicio::arrastrarVentana2);
+			// 
 			// arrastrarVentanaL2
+			// 
 			this->arrastrarVentanaL2->AutoSize = true;
 			this->arrastrarVentanaL2->Location = System::Drawing::Point(64, 6);
 			this->arrastrarVentanaL2->Name = L"arrastrarVentanaL2";
 			this->arrastrarVentanaL2->Size = System::Drawing::Size(0, 13);
 			this->arrastrarVentanaL2->TabIndex = 0;
+			// 
 			// btn_solicitud
+			// 
 			this->btn_solicitud->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_solicitud->FlatAppearance->BorderSize = 0;
 			this->btn_solicitud->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -176,7 +183,9 @@ namespace SIVENALFERR2 {
 			this->btn_solicitud->Text = L"   Solicitud";
 			this->btn_solicitud->UseVisualStyleBackColor = true;
 			this->btn_solicitud->Click += gcnew System::EventHandler(this, &Inicio::btn_solicitud_Click);
+			// 
 			// btn_detalles
+			// 
 			this->btn_detalles->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_detalles->FlatAppearance->BorderSize = 0;
 			this->btn_detalles->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -193,7 +202,9 @@ namespace SIVENALFERR2 {
 			this->btn_detalles->Text = L"   Detalles";
 			this->btn_detalles->UseVisualStyleBackColor = true;
 			this->btn_detalles->Click += gcnew System::EventHandler(this, &Inicio::btn_detalles_Click);
+			// 
 			// btn_supervisor
+			// 
 			this->btn_supervisor->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_supervisor->FlatAppearance->BorderSize = 0;
 			this->btn_supervisor->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -209,7 +220,9 @@ namespace SIVENALFERR2 {
 			this->btn_supervisor->TabIndex = 6;
 			this->btn_supervisor->Text = L"     Supervisores";
 			this->btn_supervisor->Click += gcnew System::EventHandler(this, &Inicio::btn_supervisor_Click);
+			// 
 			// btn_ajustes
+			// 
 			this->btn_ajustes->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_ajustes->FlatAppearance->BorderSize = 0;
 			this->btn_ajustes->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -226,7 +239,9 @@ namespace SIVENALFERR2 {
 			this->btn_ajustes->Text = L"   Ajustes";
 			this->btn_ajustes->UseVisualStyleBackColor = true;
 			this->btn_ajustes->Click += gcnew System::EventHandler(this, &Inicio::btn_ajustes_Click);
+			// 
 			// btn_acerca
+			// 
 			this->btn_acerca->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_acerca->FlatAppearance->BorderSize = 0;
 			this->btn_acerca->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -243,7 +258,46 @@ namespace SIVENALFERR2 {
 			this->btn_acerca->Text = L"   Acerca";
 			this->btn_acerca->UseVisualStyleBackColor = true;
 			this->btn_acerca->Click += gcnew System::EventHandler(this, &Inicio::btn_acerca_Click);
+			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->lblFecha);
+			this->panel2->Controls->Add(this->lblHora);
+			this->panel2->Location = System::Drawing::Point(0, 485);
+			this->panel2->Margin = System::Windows::Forms::Padding(3, 120, 3, 3);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(731, 30);
+			this->panel2->TabIndex = 10;
+			// 
+			// lblFecha
+			// 
+			this->lblFecha->AutoSize = true;
+			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblFecha->ForeColor = System::Drawing::Color::Black;
+			this->lblFecha->Location = System::Drawing::Point(549, 0);
+			this->lblFecha->Name = L"lblFecha";
+			this->lblFecha->Size = System::Drawing::Size(106, 29);
+			this->lblFecha->TabIndex = 1;
+			this->lblFecha->Text = L"lblFecha";
+			// 
+			// lblHora
+			// 
+			this->lblHora->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->lblHora->AutoSize = true;
+			this->lblHora->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblHora->ForeColor = System::Drawing::Color::Black;
+			this->lblHora->Location = System::Drawing::Point(45, 0);
+			this->lblHora->Name = L"lblHora";
+			this->lblHora->Size = System::Drawing::Size(91, 29);
+			this->lblHora->TabIndex = 0;
+			this->lblHora->Text = L"lblHora";
+			// 
 			// click_menu
+			// 
 			this->click_menu->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->click_menu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->click_menu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"click_menu.Image")));
@@ -254,49 +308,35 @@ namespace SIVENALFERR2 {
 			this->click_menu->TabIndex = 2;
 			this->click_menu->TabStop = false;
 			this->click_menu->Click += gcnew System::EventHandler(this, &Inicio::click_menu_Click);
+			// 
 			// Tiempo_menu
+			// 
 			this->Tiempo_menu->Interval = 10;
 			this->Tiempo_menu->Tick += gcnew System::EventHandler(this, &Inicio::Tiempo_menu_tick);
+			// 
 			// panelContenedor
+			// 
 			this->panelContenedor->BackColor = System::Drawing::Color::Transparent;
 			this->panelContenedor->Controls->Add(this->pictureBox1);
+			this->panelContenedor->Controls->Add(this->panel2);
 			this->panelContenedor->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelContenedor->Location = System::Drawing::Point(42, 0);
 			this->panelContenedor->Name = L"panelContenedor";
 			this->panelContenedor->Size = System::Drawing::Size(778, 515);
 			this->panelContenedor->TabIndex = 1;
+			// 
 			// pictureBox1
+			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(164, 50);
+			this->pictureBox1->Location = System::Drawing::Point(167, 32);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(422, 429);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 5;
 			this->pictureBox1->TabStop = false;
-			// lblFecha
-			this->lblFecha->AutoSize = true;
-			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblFecha->ForeColor = System::Drawing::Color::White;
-			this->lblFecha->Location = System::Drawing::Point(23, 48);
-			this->lblFecha->Name = L"lblFecha";
-			this->lblFecha->Size = System::Drawing::Size(106, 29);
-			this->lblFecha->TabIndex = 1;
-			this->lblFecha->Text = L"lblFecha";
-			// lblHora
-			this->lblHora->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->lblHora->AutoSize = true;
-			this->lblHora->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblHora->ForeColor = System::Drawing::Color::White;
-			this->lblHora->Location = System::Drawing::Point(31, 9);
-			this->lblHora->Name = L"lblHora";
-			this->lblHora->Size = System::Drawing::Size(91, 29);
-			this->lblHora->TabIndex = 0;
-			this->lblHora->Text = L"lblHora";
+			// 
 			// panelSuperior
+			// 
 			this->panelSuperior->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(4)),
 				static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			this->panelSuperior->Controls->Add(this->panelControlSuperior);
@@ -310,7 +350,9 @@ namespace SIVENALFERR2 {
 			this->panelSuperior->Size = System::Drawing::Size(778, 26);
 			this->panelSuperior->TabIndex = 2;
 			this->panelSuperior->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Inicio::arrastrarVentana1);
+			// 
 			// panelControlSuperior
+			// 
 			this->panelControlSuperior->Controls->Add(this->pictureBox2);
 			this->panelControlSuperior->Controls->Add(this->ctrolClose);
 			this->panelControlSuperior->Controls->Add(this->ctrolMax);
@@ -320,7 +362,9 @@ namespace SIVENALFERR2 {
 			this->panelControlSuperior->Name = L"panelControlSuperior";
 			this->panelControlSuperior->Size = System::Drawing::Size(92, 26);
 			this->panelControlSuperior->TabIndex = 5;
+			// 
 			// pictureBox2
+			// 
 			this->pictureBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
@@ -332,7 +376,9 @@ namespace SIVENALFERR2 {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 6;
 			this->pictureBox2->TabStop = false;
+			// 
 			// ctrolClose
+			// 
 			this->ctrolClose->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->ctrolClose->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -344,7 +390,9 @@ namespace SIVENALFERR2 {
 			this->ctrolClose->TabIndex = 0;
 			this->ctrolClose->TabStop = false;
 			this->ctrolClose->Click += gcnew System::EventHandler(this, &Inicio::ctrolClose_Click);
+			// 
 			// ctrolMax
+			// 
 			this->ctrolMax->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->ctrolMax->Cursor = System::Windows::Forms::Cursors::No;
@@ -356,7 +404,9 @@ namespace SIVENALFERR2 {
 			this->ctrolMax->TabIndex = 1;
 			this->ctrolMax->TabStop = false;
 			this->ctrolMax->Click += gcnew System::EventHandler(this, &Inicio::ctrolMax_Click);
+			// 
 			// ctrolMin
+			// 
 			this->ctrolMin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->ctrolMin->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -368,13 +418,17 @@ namespace SIVENALFERR2 {
 			this->ctrolMin->TabIndex = 2;
 			this->ctrolMin->TabStop = false;
 			this->ctrolMin->Click += gcnew System::EventHandler(this, &Inicio::ctrolMin_Click);
+			// 
 			// arrastrarVentanaL1
+			// 
 			this->arrastrarVentanaL1->AutoSize = true;
 			this->arrastrarVentanaL1->Location = System::Drawing::Point(332, 4);
 			this->arrastrarVentanaL1->Name = L"arrastrarVentanaL1";
 			this->arrastrarVentanaL1->Size = System::Drawing::Size(0, 13);
 			this->arrastrarVentanaL1->TabIndex = 4;
+			// 
 			// text_superior
+			// 
 			this->text_superior->AutoSize = true;
 			this->text_superior->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -384,24 +438,22 @@ namespace SIVENALFERR2 {
 			this->text_superior->Size = System::Drawing::Size(205, 21);
 			this->text_superior->TabIndex = 3;
 			this->text_superior->Text = L"SIVENALFERR | COMEDOR";
+			// 
 			// ctrolRestaurar
+			// 
 			this->ctrolRestaurar->Location = System::Drawing::Point(0, 0);
 			this->ctrolRestaurar->Name = L"ctrolRestaurar";
 			this->ctrolRestaurar->Size = System::Drawing::Size(100, 50);
 			this->ctrolRestaurar->TabIndex = 5;
 			this->ctrolRestaurar->TabStop = false;
+			// 
 			// Hora
+			// 
 			this->Hora->Enabled = true;
 			this->Hora->Tick += gcnew System::EventHandler(this, &Inicio::Hora_Tick);
-			// panel2
-			this->panel2->Controls->Add(this->lblFecha);
-			this->panel2->Controls->Add(this->lblHora);
-			this->panel2->Location = System::Drawing::Point(3, 402);
-			this->panel2->Margin = System::Windows::Forms::Padding(3, 120, 3, 3);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(152, 100);
-			this->panel2->TabIndex = 10;
+			// 
 			// Inicio
+			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
@@ -420,6 +472,8 @@ namespace SIVENALFERR2 {
 			this->Menu->ResumeLayout(false);
 			this->arrastrarVentanaMenu->ResumeLayout(false);
 			this->arrastrarVentanaMenu->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->EndInit();
 			this->panelContenedor->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -431,9 +485,8 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->EndInit();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 		//Es la parte encargada de la animación del menú

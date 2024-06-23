@@ -123,7 +123,7 @@
     <ClCompile Include="Acerca.cpp" />
     <ClCompile Include="Ajustes.cpp" />
     <ClCompile Include="Detalles.cpp" />
-    <ClCompile Include="ingresarDatos.cpp" />
+    <ClCompile Include="registroSupervisor.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Solicitando.cpp" />
@@ -140,7 +140,7 @@
     <ClInclude Include="Detalles.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ingresarDatos.h">
+    <ClInclude Include="registroSupervisor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inicio.h">
@@ -169,8 +169,8 @@
     <EmbeddedResource Include="Detalles.resx">
       <DependentUpon>Detalles.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ingresarDatos.resx">
-      <DependentUpon>ingresarDatos.h</DependentUpon>
+    <EmbeddedResource Include="registroSupervisor.resx">
+      <DependentUpon>registroSupervisor.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
