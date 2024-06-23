@@ -1,5 +1,5 @@
 #pragma once
-#include <Windows.h>
+#include "Inicio.h"
 namespace SIVENALFERR2 {
 
 	using namespace System;
@@ -34,17 +34,29 @@ namespace SIVENALFERR2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ btn_cancelar;
+	private: System::Windows::Forms::Button^ btn_iniciar;
+	private: System::Windows::Forms::TextBox^ txt_contraseña;
+
 	protected:
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
+	protected:
+
+
+	protected:
+
+
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ txt_ID;
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Label^ lbl_contraseña;
+
+
 
 
 	private:
@@ -61,63 +73,66 @@ namespace SIVENALFERR2 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->btn_cancelar = (gcnew System::Windows::Forms::Button());
+			this->btn_iniciar = (gcnew System::Windows::Forms::Button());
+			this->txt_contraseña = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->txt_ID = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->lbl_contraseña = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// button2
+			// btn_cancelar
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(160)),
+			this->btn_cancelar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(160)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_cancelar->FlatAppearance->BorderSize = 0;
+			this->btn_cancelar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_cancelar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Location = System::Drawing::Point(541, 331);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(82, 29);
-			this->button2->TabIndex = 34;
-			this->button2->Text = L"Cancelar";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
+			this->btn_cancelar->ForeColor = System::Drawing::Color::White;
+			this->btn_cancelar->Location = System::Drawing::Point(541, 331);
+			this->btn_cancelar->Name = L"btn_cancelar";
+			this->btn_cancelar->Size = System::Drawing::Size(82, 29);
+			this->btn_cancelar->TabIndex = 34;
+			this->btn_cancelar->Text = L"Cancelar";
+			this->btn_cancelar->UseVisualStyleBackColor = false;
+			this->btn_cancelar->Click += gcnew System::EventHandler(this, &Login::btn_cerrar_Click);
 			// 
-			// button1
+			// btn_iniciar
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(160)),
+			this->btn_iniciar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(160)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_iniciar->FlatAppearance->BorderSize = 0;
+			this->btn_iniciar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_iniciar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(397, 331);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(82, 29);
-			this->button1->TabIndex = 33;
-			this->button1->Text = L"Iniciar";
-			this->button1->UseVisualStyleBackColor = false;
+			this->btn_iniciar->ForeColor = System::Drawing::Color::White;
+			this->btn_iniciar->Location = System::Drawing::Point(397, 331);
+			this->btn_iniciar->Name = L"btn_iniciar";
+			this->btn_iniciar->Size = System::Drawing::Size(82, 29);
+			this->btn_iniciar->TabIndex = 33;
+			this->btn_iniciar->Text = L"Iniciar";
+			this->btn_iniciar->UseVisualStyleBackColor = false;
+			this->btn_iniciar->Click += gcnew System::EventHandler(this, &Login::btn_iniciar_Click);
 			// 
-			// textBox7
+			// txt_contraseña
 			// 
-			this->textBox7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_contraseña->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txt_contraseña->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox7->Location = System::Drawing::Point(450, 228);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(145, 26);
-			this->textBox7->TabIndex = 32;
+			this->txt_contraseña->Location = System::Drawing::Point(450, 228);
+			this->txt_contraseña->Name = L"txt_contraseña";
+			this->txt_contraseña->Size = System::Drawing::Size(145, 26);
+			this->txt_contraseña->TabIndex = 32;
+			this->txt_contraseña->UseSystemPasswordChar = true;
 			// 
 			// label8
 			// 
@@ -131,15 +146,15 @@ namespace SIVENALFERR2 {
 			this->label8->TabIndex = 31;
 			this->label8->Text = L"Contraseña:";
 			// 
-			// textBox1
+			// txt_ID
 			// 
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_ID->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txt_ID->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(450, 146);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(145, 26);
-			this->textBox1->TabIndex = 20;
+			this->txt_ID->Location = System::Drawing::Point(450, 146);
+			this->txt_ID->Name = L"txt_ID";
+			this->txt_ID->Size = System::Drawing::Size(145, 26);
+			this->txt_ID->TabIndex = 20;
 			// 
 			// label2
 			// 
@@ -195,6 +210,18 @@ namespace SIVENALFERR2 {
 			this->label1->TabIndex = 35;
 			this->label1->Text = L"Acceso de usuario";
 			// 
+			// lbl_contraseña
+			// 
+			this->lbl_contraseña->AutoSize = true;
+			this->lbl_contraseña->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_contraseña->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->lbl_contraseña->Location = System::Drawing::Point(437, 279);
+			this->lbl_contraseña->Name = L"lbl_contraseña";
+			this->lbl_contraseña->Size = System::Drawing::Size(0, 19);
+			this->lbl_contraseña->TabIndex = 36;
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -202,18 +229,20 @@ namespace SIVENALFERR2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(23)), static_cast<System::Int32>(static_cast<System::Byte>(79)),
 				static_cast<System::Int32>(static_cast<System::Byte>(135)));
 			this->ClientSize = System::Drawing::Size(652, 386);
+			this->Controls->Add(this->lbl_contraseña);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->btn_cancelar);
+			this->Controls->Add(this->btn_iniciar);
+			this->Controls->Add(this->txt_contraseña);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->txt_ID);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Login";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Login::Login_FormClosing);
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -223,8 +252,25 @@ namespace SIVENALFERR2 {
 		}
 #pragma endregion
 
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_cerrar_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+
+private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (txt_ID->Text == "admin" && txt_contraseña->Text == "123") {
+		Inicio^ From = gcnew Inicio();
+		From->Show();
+		
+	}
+	else {
+		lbl_contraseña->Text = "Contraseña Incorrecta";
+	}
+}
+private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	this->Show();
+	// Limpiar los campos de texto en el formulario de inicio
+	txt_ID->Text = "";
+	txt_contraseña->Text = "";
 }
 };
 }

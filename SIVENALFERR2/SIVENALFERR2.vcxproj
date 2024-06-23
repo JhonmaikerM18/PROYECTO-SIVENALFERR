@@ -129,6 +129,7 @@
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="Solicitando.cpp" />
     <ClCompile Include="Solicitud.cpp" />
+    <ClCompile Include="Supervisores.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="Solicitud.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Supervisores.h" />
     <ClInclude Include="Usuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>

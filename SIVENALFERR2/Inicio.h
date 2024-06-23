@@ -12,7 +12,6 @@ namespace SIVENALFERR2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	//using namespace System::Runtime::InteropServices; //Libreria para poder arrastar el programa.
 
 
 	/// <summary>
@@ -79,8 +78,6 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Button^ btn_acerca;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
-
-
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -110,6 +107,7 @@ namespace SIVENALFERR2 {
 			this->click_menu = (gcnew System::Windows::Forms::PictureBox());
 			this->Tiempo_menu = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelContenedor = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->lblFecha = (gcnew System::Windows::Forms::Label());
 			this->lblHora = (gcnew System::Windows::Forms::Label());
@@ -123,11 +121,11 @@ namespace SIVENALFERR2 {
 			this->text_superior = (gcnew System::Windows::Forms::Label());
 			this->ctrolRestaurar = (gcnew System::Windows::Forms::PictureBox());
 			this->Hora = (gcnew System::Windows::Forms::Timer(this->components));
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->Menu->SuspendLayout();
 			this->arrastrarVentanaMenu->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->BeginInit();
 			this->panelContenedor->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panelSuperior->SuspendLayout();
 			this->panelControlSuperior->SuspendLayout();
@@ -136,7 +134,6 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Menu
@@ -297,6 +294,16 @@ namespace SIVENALFERR2 {
 			this->panelContenedor->Size = System::Drawing::Size(665, 515);
 			this->panelContenedor->TabIndex = 1;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(164, 50);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(422, 429);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 5;
+			this->pictureBox1->TabStop = false;
+			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
@@ -454,16 +461,6 @@ namespace SIVENALFERR2 {
 			this->Hora->Enabled = true;
 			this->Hora->Tick += gcnew System::EventHandler(this, &Inicio::Hora_Tick);
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(164, 50);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(422, 429);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 5;
-			this->pictureBox1->TabStop = false;
-			// 
 			// Inicio
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -485,6 +482,7 @@ namespace SIVENALFERR2 {
 			this->arrastrarVentanaMenu->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->EndInit();
 			this->panelContenedor->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panelSuperior->ResumeLayout(false);
@@ -495,7 +493,6 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -541,8 +538,6 @@ private: System::Void click_menu_Click(System::Object^ sender, System::EventArgs
 	Tiempo_menu->Start();
 }
 
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
 private: System::Void ctrolClose_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (MessageBox::Show("Si cierra el programa se puede perder toda la información no guardada", "Advertencia", MessageBoxButtons::YesNo) == System::Windows::Forms::DialogResult::Yes) {
 		//Se cerrará el programa

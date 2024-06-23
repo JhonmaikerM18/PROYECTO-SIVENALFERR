@@ -1,8 +1,9 @@
 #include "Inicio.h"
+#include "Login.h"
 
 using namespace SIVENALFERR2;
 
 int main() {
 	Application::VisualStyleState;
-	Application::Run(gcnew Inicio());
+	Application::Run(gcnew Login());
 }

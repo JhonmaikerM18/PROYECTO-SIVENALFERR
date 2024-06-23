@@ -1,6 +1,4 @@
 #pragma once
-#include "Solicitando.h"
-#include "Login.h"
 
 namespace SIVENALFERR2 {
 
@@ -190,7 +188,6 @@ namespace SIVENALFERR2 {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Si";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Solicitud::button1_Click);
 			// 
 			// label6
 			// 
@@ -321,10 +318,6 @@ namespace SIVENALFERR2 {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Login^ Iniciar = gcnew Login();
-		Iniciar->ShowDialog();
-	}
 private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
