@@ -257,10 +257,15 @@ private: System::Void btn_cerrar_Click(System::Object^ sender, System::EventArgs
 }
 
 private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArgs^ e) {
+	Inicio^ From = gcnew Inicio();
+	From->ShowDialog();		
+
 	if (txt_ID->Text == "admin" && txt_contraseña->Text == "123") {
-		Inicio^ From = gcnew Inicio();
-		From->Show();
-		
+		//Inicio^ From = gcnew Inicio();
+		txt_ID->Text = "";
+		lbl_contraseña->Text = "";
+		txt_contraseña->Text = "";
+		//From->ShowDialog();		
 	}
 	else {
 		lbl_contraseña->Text = "Contraseña Incorrecta";
@@ -269,8 +274,7 @@ private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArg
 private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 	this->Show();
 	// Limpiar los campos de texto en el formulario de inicio
-	txt_ID->Text = "";
-	txt_contraseña->Text = "";
+
 }
 };
 }

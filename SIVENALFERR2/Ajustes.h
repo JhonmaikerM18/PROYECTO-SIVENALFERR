@@ -1,7 +1,6 @@
 #pragma once
 
 namespace SIVENALFERR2 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -37,15 +36,11 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Label^ modoOscuro;
 	protected:
 
-
-
-
-
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -56,9 +51,9 @@ namespace SIVENALFERR2 {
 		{
 			this->modoOscuro = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
+			//
 			// modoOscuro
-			// 
+			//
 			this->modoOscuro->AutoSize = true;
 			this->modoOscuro->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -67,9 +62,9 @@ namespace SIVENALFERR2 {
 			this->modoOscuro->Size = System::Drawing::Size(136, 23);
 			this->modoOscuro->TabIndex = 0;
 			this->modoOscuro->Text = L"Modo Oscuro";
-			// 
+			//
 			// Ajustes
-			// 
+			//
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
@@ -80,7 +75,6 @@ namespace SIVENALFERR2 {
 			this->Text = L"Ajustes";
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 	};

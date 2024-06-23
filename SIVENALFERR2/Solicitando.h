@@ -1,7 +1,6 @@
 #pragma once
 
 namespace SIVENALFERR2 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -37,7 +36,6 @@ namespace SIVENALFERR2 {
 
 	protected:
 
-
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Label^ label5;
@@ -56,7 +54,7 @@ namespace SIVENALFERR2 {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -88,9 +86,9 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
-			// 
+			//
 			// panel2
-			// 
+			//
 			this->panel2->BackColor = System::Drawing::Color::White;
 			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->panel3);
@@ -99,18 +97,18 @@ namespace SIVENALFERR2 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(213, 327);
 			this->panel2->TabIndex = 7;
-			// 
+			//
 			// panel4
-			// 
+			//
 			this->panel4->Controls->Add(this->label5);
 			this->panel4->Controls->Add(this->pictureBox3);
 			this->panel4->Location = System::Drawing::Point(3, 110);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(202, 76);
 			this->panel4->TabIndex = 3;
-			// 
+			//
 			// label5
-			// 
+			//
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -119,9 +117,9 @@ namespace SIVENALFERR2 {
 			this->label5->Size = System::Drawing::Size(77, 18);
 			this->label5->TabIndex = 1;
 			this->label5->Text = L"Regular";
-			// 
+			//
 			// pictureBox3
-			// 
+			//
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->Location = System::Drawing::Point(0, 4);
 			this->pictureBox3->Name = L"pictureBox3";
@@ -129,18 +127,18 @@ namespace SIVENALFERR2 {
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox3->TabIndex = 0;
 			this->pictureBox3->TabStop = false;
-			// 
+			//
 			// panel3
-			// 
+			//
 			this->panel3->Controls->Add(this->label4);
 			this->panel3->Controls->Add(this->pictureBox2);
 			this->panel3->Location = System::Drawing::Point(3, 223);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(202, 76);
 			this->panel3->TabIndex = 2;
-			// 
+			//
 			// label4
-			// 
+			//
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -149,9 +147,9 @@ namespace SIVENALFERR2 {
 			this->label4->Size = System::Drawing::Size(54, 18);
 			this->label4->TabIndex = 1;
 			this->label4->Text = L"Dieta";
-			// 
+			//
 			// pictureBox2
-			// 
+			//
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(0, 4);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -159,18 +157,18 @@ namespace SIVENALFERR2 {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 0;
 			this->pictureBox2->TabStop = false;
-			// 
+			//
 			// panelVegetariano
-			// 
+			//
 			this->panelVegetariano->Controls->Add(this->label3);
 			this->panelVegetariano->Controls->Add(this->pictureBox1);
 			this->panelVegetariano->Location = System::Drawing::Point(3, 3);
 			this->panelVegetariano->Name = L"panelVegetariano";
 			this->panelVegetariano->Size = System::Drawing::Size(202, 76);
 			this->panelVegetariano->TabIndex = 0;
-			// 
+			//
 			// label3
-			// 
+			//
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -179,9 +177,9 @@ namespace SIVENALFERR2 {
 			this->label3->Size = System::Drawing::Size(116, 18);
 			this->label3->TabIndex = 1;
 			this->label3->Text = L"Vegetariano";
-			// 
+			//
 			// pictureBox1
-			// 
+			//
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(0, 4);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -189,9 +187,9 @@ namespace SIVENALFERR2 {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			// 
+			//
 			// label2
-			// 
+			//
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -201,18 +199,18 @@ namespace SIVENALFERR2 {
 			this->label2->Size = System::Drawing::Size(213, 18);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"Trabajadores a Cargo: ";
-			// 
+			//
 			// panel1
-			// 
+			//
 			this->panel1->BackColor = System::Drawing::Color::White;
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Location = System::Drawing::Point(0, 12);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(806, 47);
 			this->panel1->TabIndex = 5;
-			// 
+			//
 			// label1
-			// 
+			//
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -221,9 +219,9 @@ namespace SIVENALFERR2 {
 			this->label1->Size = System::Drawing::Size(199, 22);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Solicitud de Comidas";
-			// 
+			//
 			// Solicitando
-			// 
+			//
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(133)),
@@ -249,8 +247,7 @@ namespace SIVENALFERR2 {
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
-};
+	};
 }

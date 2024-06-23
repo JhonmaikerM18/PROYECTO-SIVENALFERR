@@ -1,7 +1,6 @@
 #pragma once
 
 namespace SIVENALFERR2 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -47,7 +46,7 @@ namespace SIVENALFERR2 {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -64,9 +63,9 @@ namespace SIVENALFERR2 {
 			this->Apellido = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
+			//
 			// dataGridView1
-			// 
+			//
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->ID, this->Jerarquia,
@@ -76,34 +75,34 @@ namespace SIVENALFERR2 {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(492, 349);
 			this->dataGridView1->TabIndex = 0;
-			// 
+			//
 			// ID
-			// 
+			//
 			this->ID->HeaderText = L"ID";
 			this->ID->Name = L"ID";
-			// 
+			//
 			// Jerarquia
-			// 
+			//
 			this->Jerarquia->HeaderText = L"Jerarquia";
 			this->Jerarquia->Name = L"Jerarquia";
-			// 
+			//
 			// Trabajadores
-			// 
+			//
 			this->Trabajadores->HeaderText = L"Trabajadores";
 			this->Trabajadores->Name = L"Trabajadores";
-			// 
+			//
 			// Nombre
-			// 
+			//
 			this->Nombre->HeaderText = L"Nombre";
 			this->Nombre->Name = L"Nombre";
-			// 
+			//
 			// Apellido
-			// 
+			//
 			this->Apellido->HeaderText = L"Apellido";
 			this->Apellido->Name = L"Apellido";
-			// 
+			//
 			// Detalles
-			// 
+			//
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(788, 437);
@@ -111,10 +110,9 @@ namespace SIVENALFERR2 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Detalles";
 			this->Text = L"Detalles";
-			
+
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 	};
