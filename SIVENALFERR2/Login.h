@@ -45,7 +45,8 @@ namespace SIVENALFERR2 {
 	protected:
 
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ txt_ID;
+	private: System::Windows::Forms::TextBox^ txt_Name;
+
 
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -53,7 +54,7 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ lbl_contraseña;
-	private: System::Windows::Forms::Button^ button1;
+
 
 	private:
 		/// <summary>
@@ -73,10 +74,9 @@ namespace SIVENALFERR2 {
 			this->btn_iniciar = (gcnew System::Windows::Forms::Button());
 			this->txt_contraseña = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->txt_ID = (gcnew System::Windows::Forms::TextBox());
+			this->txt_Name = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -143,15 +143,15 @@ namespace SIVENALFERR2 {
 			this->label8->TabIndex = 31;
 			this->label8->Text = L"Contraseña:";
 			// 
-			// txt_ID
+			// txt_Name
 			// 
-			this->txt_ID->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txt_ID->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_Name->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_ID->Location = System::Drawing::Point(450, 146);
-			this->txt_ID->Name = L"txt_ID";
-			this->txt_ID->Size = System::Drawing::Size(145, 26);
-			this->txt_ID->TabIndex = 20;
+			this->txt_Name->Location = System::Drawing::Point(450, 146);
+			this->txt_Name->Name = L"txt_Name";
+			this->txt_Name->Size = System::Drawing::Size(145, 26);
+			this->txt_Name->TabIndex = 20;
 			// 
 			// label2
 			// 
@@ -159,39 +159,21 @@ namespace SIVENALFERR2 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(442, 104);
+			this->label2->Location = System::Drawing::Point(470, 111);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(153, 24);
+			this->label2->Size = System::Drawing::Size(100, 24);
 			this->label2->TabIndex = 19;
-			this->label2->Text = L"Identificación:";
+			this->label2->Text = L"Nombre:";
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
-			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->pictureBox2);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(375, 390);
 			this->panel1->TabIndex = 18;
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(160)),
-				static_cast<System::Int32>(static_cast<System::Byte>(249)));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(21, 345);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(82, 29);
-			this->button1->TabIndex = 37;
-			this->button1->Text = L"Inicio :(";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -250,7 +232,7 @@ namespace SIVENALFERR2 {
 			this->Controls->Add(this->btn_iniciar);
 			this->Controls->Add(this->txt_contraseña);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->txt_ID);
+			this->Controls->Add(this->txt_Name);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -258,6 +240,7 @@ namespace SIVENALFERR2 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Login::Login_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -273,55 +256,54 @@ namespace SIVENALFERR2 {
 	}
 
 	private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ ID = this->txt_ID->Text;
+		String^ Name = this->txt_ID->Text;
 		String^ password = this->txt_contraseña->Text;
-		if (ID->Length == 0 || password->Length == 0) {
+		if (Name->Length == 0 || password->Length == 0) {
 			//MessageBox::Show("Llene todo correctamente", "Advertencia");
 			lbl_contraseña->Text = "Llene todo correctamente";
 		}
-		else if (txt_ID->Text == "admin" && txt_contraseña->Text == "123") {
-			//Inicio^ From = gcnew Inicio();
-			txt_ID->Text = "";
-			lbl_contraseña->Text = "";
-			txt_contraseña->Text = "";
-			//From->ShowDialog();
-		}
-		try {
-			String^ string_Conexion = "Data Source=ADMINISTRADOR\\SQLEXPRESS;Initial Catalog=DB_SIVENALFERR;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
-			SqlConnection SQL_Open(string_Conexion);
-			SQL_Open.Open();
-			String^ SQL_login = "SELECT * FROM Supervisores WHERE ID=@id AND password=@pwd";
-			SqlCommand comandos(SQL_login, % SQL_Open);
-			comandos.Parameters->AddWithValue("@id", ID);
-			comandos.Parameters->AddWithValue("@pwd", password);
+		else {
+			try {
+				String^ string_Conexion = "Data Source=ADMINISTRADOR\\SQLEXPRESS;Initial Catalog=DB_SIVENALFERR;Integrated Security=True;Encrypt=False";
+				SqlConnection SQL_Open(string_Conexion);
+				SQL_Open.Open();
+				String^ SQL_login = "SELECT * FROM Supervisores WHERE Nombre=@name AND Password=@pwd";
+				SqlCommand comandos(SQL_login, % SQL_Open);
+				comandos.Parameters->AddWithValue("@name", Name);
+				comandos.Parameters->AddWithValue("@pwd", password);
 
-			SqlDataReader^ reader = comandos.ExecuteReader();
-			if (reader->Read()) {
-				Usuario = gcnew SupervisorClass;
-				Usuario->ID = reader->GetInt32(1);
-				Usuario->name = reader->GetString(1);
-				Usuario->last_name = reader->GetString(2);
-				Usuario->work_area = reader->GetString(3);
-				Usuario->level_work = reader->GetInt32(2);
-				Usuario->workers = reader->GetInt32(3);
-				Usuario->password = reader->GetString(4);
-				this->Close();
+				SqlDataReader^ reader = comandos.ExecuteReader();
+				if (reader->Read()) {
+					// Crear una objeto Usuario para asignar valores desde la base de datos
+					Usuario = gcnew SupervisorClass;
+					Usuario->SupervisorID = reader->GetInt32(0);
+					Usuario->Nombre = reader->GetString(1);
+					Usuario->Apellido = reader->GetString(2);
+					Usuario->AreaTrabajo = reader->GetString(3);
+					Usuario->NivelJerarquico = reader->GetInt32(4);
+					Usuario->CantidadTrabajadores = reader->GetInt32(5);
+					Usuario->Password = reader->GetString(6);
+					// Limpiar los campos de texto en el formulario de inicio
+					txt_ID->Text = "";
+					lbl_contraseña->Text = "";
+					txt_contraseña->Text = "";
+					//Enviando al inicio 
+					Inicio^ temporal = gcnew Inicio(Usuario);
+					temporal->Show();
+				}
+				else
+					lbl_contraseña->Text = "ID o Contraseña Incorrecta";
 			}
-			else
-				lbl_contraseña->Text = "ID o Contraseña Incorrecta";
-		}
-		catch (Exception^ e) {
-			MessageBox::Show("Fue imposible conectar con la base de datos, verifique su conexión a internet y vuelva a intentar"
-				, "Database connection error");
+			catch (Exception^ ex) {
+				MessageBox::Show("Error al conectar con la base de datos: " + ex->Message, "Error de conexión");
+			}
 		}
 	}
 	private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		this->Show();
-		// Limpiar los campos de texto en el formulario de inicio
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Inicio^ temporal = gcnew Inicio();
-		temporal->Show();
+	private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+		
 	}
-	};
+};
 }

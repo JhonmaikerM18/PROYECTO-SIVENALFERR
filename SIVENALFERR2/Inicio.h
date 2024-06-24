@@ -4,6 +4,7 @@
 #include "Detalles.h"
 #include "Supervisores.h"
 #include "Acerca.h"
+#include "SupervisorClass.h"
 
 namespace SIVENALFERR2 {
 	using namespace System;
@@ -21,12 +22,14 @@ namespace SIVENALFERR2 {
 	private:
 
 	public:
-		Inicio(void)
+		Inicio(SupervisorClass^ Usuario)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			lbl_name_user->Text = "Bienvenido Administrador " + Usuario->Nombre + Usuario->Apellido;
+
 		}
 
 	protected:
@@ -72,6 +75,8 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Button^ btn_acerca;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ lbl_name_user;
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -103,6 +108,7 @@ namespace SIVENALFERR2 {
 			this->lblHora = (gcnew System::Windows::Forms::Label());
 			this->Tiempo_menu = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelContenedor = (gcnew System::Windows::Forms::Panel());
+			this->lbl_name_user = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSuperior = (gcnew System::Windows::Forms::Panel());
 			this->panelControlSuperior = (gcnew System::Windows::Forms::Panel());
@@ -317,6 +323,7 @@ namespace SIVENALFERR2 {
 			// panelContenedor
 			// 
 			this->panelContenedor->BackColor = System::Drawing::Color::Transparent;
+			this->panelContenedor->Controls->Add(this->lbl_name_user);
 			this->panelContenedor->Controls->Add(this->pictureBox1);
 			this->panelContenedor->Controls->Add(this->panel2);
 			this->panelContenedor->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -324,6 +331,17 @@ namespace SIVENALFERR2 {
 			this->panelContenedor->Name = L"panelContenedor";
 			this->panelContenedor->Size = System::Drawing::Size(777, 515);
 			this->panelContenedor->TabIndex = 1;
+			// 
+			// lbl_name_user
+			// 
+			this->lbl_name_user->AutoSize = true;
+			this->lbl_name_user->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_name_user->Location = System::Drawing::Point(6, 47);
+			this->lbl_name_user->Name = L"lbl_name_user";
+			this->lbl_name_user->Size = System::Drawing::Size(179, 24);
+			this->lbl_name_user->TabIndex = 11;
+			this->lbl_name_user->Text = L"Nombre_Supervisor";
 			// 
 			// pictureBox1
 			// 
@@ -475,6 +493,7 @@ namespace SIVENALFERR2 {
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->panelContenedor->ResumeLayout(false);
+			this->panelContenedor->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelSuperior->ResumeLayout(false);
 			this->panelSuperior->PerformLayout();
