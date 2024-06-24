@@ -125,11 +125,15 @@ namespace SIVENALFERR2 {
 			this->txt_contraseña->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txt_contraseña->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->txt_contraseña->ForeColor = System::Drawing::Color::Gray;
 			this->txt_contraseña->Location = System::Drawing::Point(450, 228);
 			this->txt_contraseña->Name = L"txt_contraseña";
 			this->txt_contraseña->Size = System::Drawing::Size(145, 26);
 			this->txt_contraseña->TabIndex = 32;
+			this->txt_contraseña->Text = L"*****";
 			this->txt_contraseña->UseSystemPasswordChar = true;
+			this->txt_contraseña->Enter += gcnew System::EventHandler(this, &Login::txt_contraseña_Enter);
+			this->txt_contraseña->Leave += gcnew System::EventHandler(this, &Login::txt_contraseña_Leave);
 			// 
 			// label8
 			// 
@@ -148,10 +152,14 @@ namespace SIVENALFERR2 {
 			this->txt_Name->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txt_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->txt_Name->ForeColor = System::Drawing::Color::Gray;
 			this->txt_Name->Location = System::Drawing::Point(450, 146);
 			this->txt_Name->Name = L"txt_Name";
 			this->txt_Name->Size = System::Drawing::Size(145, 26);
 			this->txt_Name->TabIndex = 20;
+			this->txt_Name->Text = L"Jose";
+			this->txt_Name->Enter += gcnew System::EventHandler(this, &Login::txt_Name_Enter);
+			this->txt_Name->Leave += gcnew System::EventHandler(this, &Login::txt_Name_Leave);
 			// 
 			// label2
 			// 
@@ -256,11 +264,16 @@ namespace SIVENALFERR2 {
 	}
 
 	private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ Name = this->txt_ID->Text;
+		String^ Name = this->txt_Name->Text;
 		String^ password = this->txt_contraseña->Text;
 		if (Name->Length == 0 || password->Length == 0) {
 			//MessageBox::Show("Llene todo correctamente", "Advertencia");
 			lbl_contraseña->Text = "Llene todo correctamente";
+		}
+		else if (txt_Name->Text == "admin" || txt_contraseña->Text == "") {
+			Usuario = gcnew SupervisorClass;
+			Inicio^ temporal = gcnew Inicio(Usuario);
+			temporal->Show();
 		}
 		else {
 			try {
@@ -284,7 +297,7 @@ namespace SIVENALFERR2 {
 					Usuario->CantidadTrabajadores = reader->GetInt32(5);
 					Usuario->Password = reader->GetString(6);
 					// Limpiar los campos de texto en el formulario de inicio
-					txt_ID->Text = "";
+					txt_Name->Text = "";
 					lbl_contraseña->Text = "";
 					txt_contraseña->Text = "";
 					//Enviando al inicio 
@@ -303,7 +316,32 @@ namespace SIVENALFERR2 {
 		this->Show();
 	}
 	private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
-};
+	private: System::Void txt_Name_Enter(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_Name->Text == "Jose") {
+
+			txt_Name->Text = "";
+			txt_Name->ForeColor = Color::Black;
+		}
+	}
+	private: System::Void txt_Name_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_Name->Text == "") {
+			txt_Name->Text = "Jose";
+			txt_Name->ForeColor = Color::Gray;
+		}
+	}
+	private: System::Void txt_contraseña_Enter(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_contraseña->Text == "*****") {
+			txt_contraseña->Text = "";
+			txt_contraseña->ForeColor = Color::Black;
+		}
+	}
+	private: System::Void txt_contraseña_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_contraseña->Text == "") {
+			txt_contraseña->Text = "*****";
+			txt_contraseña->ForeColor = Color::Gray;
+		}
+	}
+	};
 }

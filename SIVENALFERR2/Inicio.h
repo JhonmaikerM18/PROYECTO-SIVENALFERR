@@ -28,7 +28,13 @@ namespace SIVENALFERR2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			lbl_name_user->Text = "Bienvenido Administrador " + Usuario->Nombre + Usuario->Apellido;
+			if (Usuario->Nombre_Admin != "0") {
+				lbl_name_user->Text = "Bienvenido Supervisor " + Usuario->Nombre + Usuario->Apellido;
+			}
+			else {
+				lbl_name_user->Text = "Bienvenido Administrador ";
+			}
+
 
 		}
 

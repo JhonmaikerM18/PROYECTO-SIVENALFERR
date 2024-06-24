@@ -11,6 +11,7 @@ public:
 	int NivelJerarquico;
 	int CantidadTrabajadores;
 	String^ Password;
-
+	//Administrador
+	String^ Nombre_Admin = "0";
 };
 
