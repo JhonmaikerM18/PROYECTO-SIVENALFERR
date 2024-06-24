@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Clases">
+      <UniqueIdentifier>{8c1c4546-9e88-40b0-9692-ac2c168b5650}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solicitud.cpp">
@@ -42,6 +45,9 @@
     <ClCompile Include="Acerca.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="SupervisorClass.cpp">
+      <Filter>Clases</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inicio.h">
@@ -70,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="Acerca.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="SupervisorClass.h">
+      <Filter>Clases</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

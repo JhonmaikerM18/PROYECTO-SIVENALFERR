@@ -92,6 +92,7 @@ namespace SIVENALFERR2 {
 			this->Menu = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->arrastrarVentanaMenu = (gcnew System::Windows::Forms::Panel());
 			this->arrastrarVentanaL2 = (gcnew System::Windows::Forms::Label());
+			this->click_menu = (gcnew System::Windows::Forms::PictureBox());
 			this->btn_solicitud = (gcnew System::Windows::Forms::Button());
 			this->btn_detalles = (gcnew System::Windows::Forms::Button());
 			this->btn_supervisor = (gcnew System::Windows::Forms::Button());
@@ -100,7 +101,6 @@ namespace SIVENALFERR2 {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->lblFecha = (gcnew System::Windows::Forms::Label());
 			this->lblHora = (gcnew System::Windows::Forms::Label());
-			this->click_menu = (gcnew System::Windows::Forms::PictureBox());
 			this->Tiempo_menu = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelContenedor = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -116,8 +116,8 @@ namespace SIVENALFERR2 {
 			this->Hora = (gcnew System::Windows::Forms::Timer(this->components));
 			this->Menu->SuspendLayout();
 			this->arrastrarVentanaMenu->SuspendLayout();
-			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->BeginInit();
+			this->panel2->SuspendLayout();
 			this->panelContenedor->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panelSuperior->SuspendLayout();
@@ -143,14 +143,15 @@ namespace SIVENALFERR2 {
 			this->Menu->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->Menu->Location = System::Drawing::Point(0, 0);
 			this->Menu->MaximumSize = System::Drawing::Size(155, 515);
-			this->Menu->MinimumSize = System::Drawing::Size(42, 515);
+			this->Menu->MinimumSize = System::Drawing::Size(43, 515);
 			this->Menu->Name = L"Menu";
-			this->Menu->Size = System::Drawing::Size(42, 515);
+			this->Menu->Size = System::Drawing::Size(43, 515);
 			this->Menu->TabIndex = 0;
 			// 
 			// arrastrarVentanaMenu
 			// 
 			this->arrastrarVentanaMenu->Controls->Add(this->arrastrarVentanaL2);
+			this->arrastrarVentanaMenu->Controls->Add(this->click_menu);
 			this->arrastrarVentanaMenu->Location = System::Drawing::Point(3, 3);
 			this->arrastrarVentanaMenu->Name = L"arrastrarVentanaMenu";
 			this->arrastrarVentanaMenu->Size = System::Drawing::Size(152, 41);
@@ -164,6 +165,18 @@ namespace SIVENALFERR2 {
 			this->arrastrarVentanaL2->Name = L"arrastrarVentanaL2";
 			this->arrastrarVentanaL2->Size = System::Drawing::Size(0, 13);
 			this->arrastrarVentanaL2->TabIndex = 0;
+			// 
+			// click_menu
+			// 
+			this->click_menu->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->click_menu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"click_menu.Image")));
+			this->click_menu->Location = System::Drawing::Point(9, 6);
+			this->click_menu->Name = L"click_menu";
+			this->click_menu->Size = System::Drawing::Size(21, 26);
+			this->click_menu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->click_menu->TabIndex = 2;
+			this->click_menu->TabStop = false;
+			this->click_menu->Click += gcnew System::EventHandler(this, &Inicio::click_menu_Click);
 			// 
 			// btn_solicitud
 			// 
@@ -296,19 +309,6 @@ namespace SIVENALFERR2 {
 			this->lblHora->TabIndex = 0;
 			this->lblHora->Text = L"lblHora";
 			// 
-			// click_menu
-			// 
-			this->click_menu->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->click_menu->Dock = System::Windows::Forms::DockStyle::Left;
-			this->click_menu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"click_menu.Image")));
-			this->click_menu->Location = System::Drawing::Point(0, 0);
-			this->click_menu->Name = L"click_menu";
-			this->click_menu->Size = System::Drawing::Size(21, 26);
-			this->click_menu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->click_menu->TabIndex = 2;
-			this->click_menu->TabStop = false;
-			this->click_menu->Click += gcnew System::EventHandler(this, &Inicio::click_menu_Click);
-			// 
 			// Tiempo_menu
 			// 
 			this->Tiempo_menu->Interval = 10;
@@ -320,15 +320,15 @@ namespace SIVENALFERR2 {
 			this->panelContenedor->Controls->Add(this->pictureBox1);
 			this->panelContenedor->Controls->Add(this->panel2);
 			this->panelContenedor->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panelContenedor->Location = System::Drawing::Point(42, 0);
+			this->panelContenedor->Location = System::Drawing::Point(43, 0);
 			this->panelContenedor->Name = L"panelContenedor";
-			this->panelContenedor->Size = System::Drawing::Size(778, 515);
+			this->panelContenedor->Size = System::Drawing::Size(777, 515);
 			this->panelContenedor->TabIndex = 1;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(167, 32);
+			this->pictureBox1->Location = System::Drawing::Point(146, 27);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(422, 429);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -341,13 +341,12 @@ namespace SIVENALFERR2 {
 				static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			this->panelSuperior->Controls->Add(this->panelControlSuperior);
 			this->panelSuperior->Controls->Add(this->arrastrarVentanaL1);
-			this->panelSuperior->Controls->Add(this->click_menu);
 			this->panelSuperior->Controls->Add(this->text_superior);
 			this->panelSuperior->Controls->Add(this->ctrolRestaurar);
 			this->panelSuperior->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panelSuperior->Location = System::Drawing::Point(42, 0);
+			this->panelSuperior->Location = System::Drawing::Point(43, 0);
 			this->panelSuperior->Name = L"panelSuperior";
-			this->panelSuperior->Size = System::Drawing::Size(778, 26);
+			this->panelSuperior->Size = System::Drawing::Size(777, 26);
 			this->panelSuperior->TabIndex = 2;
 			this->panelSuperior->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Inicio::arrastrarVentana1);
 			// 
@@ -358,7 +357,7 @@ namespace SIVENALFERR2 {
 			this->panelControlSuperior->Controls->Add(this->ctrolMax);
 			this->panelControlSuperior->Controls->Add(this->ctrolMin);
 			this->panelControlSuperior->Dock = System::Windows::Forms::DockStyle::Right;
-			this->panelControlSuperior->Location = System::Drawing::Point(686, 0);
+			this->panelControlSuperior->Location = System::Drawing::Point(685, 0);
 			this->panelControlSuperior->Name = L"panelControlSuperior";
 			this->panelControlSuperior->Size = System::Drawing::Size(92, 26);
 			this->panelControlSuperior->TabIndex = 5;
@@ -472,9 +471,9 @@ namespace SIVENALFERR2 {
 			this->Menu->ResumeLayout(false);
 			this->arrastrarVentanaMenu->ResumeLayout(false);
 			this->arrastrarVentanaMenu->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->click_menu))->EndInit();
 			this->panelContenedor->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelSuperior->ResumeLayout(false);
@@ -490,7 +489,7 @@ namespace SIVENALFERR2 {
 		}
 #pragma endregion
 		//Es la parte encargada de la animación del menú
-		bool MenuExpandido = true;
+		bool MenuExpandido = false;
 	private: System::Void Tiempo_menu_tick(System::Object^ sender, System::EventArgs^ e) {
 		int cambio = MenuExpandido ? -10 : 10;
 		Menu->Width += cambio;
@@ -511,7 +510,7 @@ namespace SIVENALFERR2 {
 					   FormAbierto = true;
 					   /*Cierra 20 Formularios para optimizar el codigo
 					   Si no hay 20, el programa funciona con normalidad igual */
-					   for (int i = 0; i < 30; i++) {
+					   for (int i = 0; i < 20; i++) {
 						   formularioActual->Close();
 					   }
 				   }

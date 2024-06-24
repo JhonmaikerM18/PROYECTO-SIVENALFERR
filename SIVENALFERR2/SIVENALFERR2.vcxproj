@@ -128,6 +128,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Solicitando.cpp" />
     <ClCompile Include="Solicitud.cpp" />
+    <ClCompile Include="SupervisorClass.cpp" />
     <ClCompile Include="Supervisores.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +156,7 @@
     <ClInclude Include="Solicitud.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SupervisorClass.h" />
     <ClInclude Include="Supervisores.h">
       <FileType>CppForm</FileType>
     </ClInclude>

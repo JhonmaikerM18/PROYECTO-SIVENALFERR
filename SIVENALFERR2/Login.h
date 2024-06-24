@@ -1,19 +1,19 @@
 #pragma once
 #include "Inicio.h"
+#include "SupervisorClass.h"
 namespace SIVENALFERR2 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 	/// <summary>
 	/// Resumen de Login
 	/// </summary>
 	public ref class Login : public System::Windows::Forms::Form
 	{
-
 	public:
 		Login(void)
 		{
@@ -42,9 +42,7 @@ namespace SIVENALFERR2 {
 
 	protected:
 
-
 	protected:
-
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ txt_ID;
@@ -55,15 +53,13 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ lbl_contraseña;
-
-
-
+	private: System::Windows::Forms::Button^ button1;
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -80,6 +76,7 @@ namespace SIVENALFERR2 {
 			this->txt_ID = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -171,12 +168,30 @@ namespace SIVENALFERR2 {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->pictureBox2);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(375, 390);
 			this->panel1->TabIndex = 18;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(160)),
+				static_cast<System::Int32>(static_cast<System::Byte>(249)));
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(21, 345);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(82, 29);
+			this->button1->TabIndex = 37;
+			this->button1->Text = L"Inicio :(";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -217,7 +232,7 @@ namespace SIVENALFERR2 {
 				static_cast<System::Byte>(0)));
 			this->lbl_contraseña->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->lbl_contraseña->Location = System::Drawing::Point(437, 279);
+			this->lbl_contraseña->Location = System::Drawing::Point(420, 279);
 			this->lbl_contraseña->Name = L"lbl_contraseña";
 			this->lbl_contraseña->Size = System::Drawing::Size(0, 19);
 			this->lbl_contraseña->TabIndex = 36;
@@ -251,30 +266,62 @@ namespace SIVENALFERR2 {
 
 		}
 #pragma endregion
-
-private: System::Void btn_cerrar_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-
-private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArgs^ e) {
-	Inicio^ From = gcnew Inicio();
-	From->ShowDialog();		
-
-	if (txt_ID->Text == "admin" && txt_contraseña->Text == "123") {
-		//Inicio^ From = gcnew Inicio();
-		txt_ID->Text = "";
-		lbl_contraseña->Text = "";
-		txt_contraseña->Text = "";
-		//From->ShowDialog();		
+		//Variable global de usuario
+	public: SupervisorClass^ Usuario = nullptr;
+	private: System::Void btn_cerrar_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
 	}
-	else {
-		lbl_contraseña->Text = "Contraseña Incorrecta";
-	}
-}
-private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	this->Show();
-	// Limpiar los campos de texto en el formulario de inicio
 
-}
-};
+	private: System::Void btn_iniciar_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ ID = this->txt_ID->Text;
+		String^ password = this->txt_contraseña->Text;
+		if (ID->Length == 0 || password->Length == 0) {
+			//MessageBox::Show("Llene todo correctamente", "Advertencia");
+			lbl_contraseña->Text = "Llene todo correctamente";
+		}
+		else if (txt_ID->Text == "admin" && txt_contraseña->Text == "123") {
+			//Inicio^ From = gcnew Inicio();
+			txt_ID->Text = "";
+			lbl_contraseña->Text = "";
+			txt_contraseña->Text = "";
+			//From->ShowDialog();
+		}
+		try {
+			String^ string_Conexion = "Data Source=ADMINISTRADOR\\SQLEXPRESS;Initial Catalog=DB_SIVENALFERR;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
+			SqlConnection SQL_Open(string_Conexion);
+			SQL_Open.Open();
+			String^ SQL_login = "SELECT * FROM Supervisores WHERE ID=@id AND password=@pwd";
+			SqlCommand comandos(SQL_login, % SQL_Open);
+			comandos.Parameters->AddWithValue("@id", ID);
+			comandos.Parameters->AddWithValue("@pwd", password);
+
+			SqlDataReader^ reader = comandos.ExecuteReader();
+			if (reader->Read()) {
+				Usuario = gcnew SupervisorClass;
+				Usuario->ID = reader->GetInt32(1);
+				Usuario->name = reader->GetString(1);
+				Usuario->last_name = reader->GetString(2);
+				Usuario->work_area = reader->GetString(3);
+				Usuario->level_work = reader->GetInt32(2);
+				Usuario->workers = reader->GetInt32(3);
+				Usuario->password = reader->GetString(4);
+				this->Close();
+			}
+			else
+				lbl_contraseña->Text = "ID o Contraseña Incorrecta";
+		}
+		catch (Exception^ e) {
+			MessageBox::Show("Fue imposible conectar con la base de datos, verifique su conexión a internet y vuelva a intentar"
+				, "Database connection error");
+		}
+	}
+	private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		this->Show();
+		// Limpiar los campos de texto en el formulario de inicio
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		Inicio^ temporal = gcnew Inicio();
+		temporal->Show();
+	}
+	};
 }
