@@ -270,7 +270,7 @@ namespace SIVENALFERR2 {
 			//MessageBox::Show("Llene todo correctamente", "Advertencia");
 			lbl_contraseña->Text = "Llene todo correctamente";
 		}
-		else if (txt_Name->Text == "admin" || txt_contraseña->Text == "") {
+		else if (txt_Name->Text == "0" || txt_contraseña->Text == "") {
 			Usuario = gcnew SupervisorClass;
 			Inicio^ temporal = gcnew Inicio(Usuario);
 			temporal->Show();
@@ -297,12 +297,17 @@ namespace SIVENALFERR2 {
 					Usuario->CantidadTrabajadores = reader->GetInt32(5);
 					Usuario->Password = reader->GetString(6);
 					// Limpiar los campos de texto en el formulario de inicio
-					txt_Name->Text = "";
 					lbl_contraseña->Text = "";
-					txt_contraseña->Text = "";
+
+					txt_Name->Text = "Jose";
+					txt_contraseña->Text = "*****";
+
+					txt_contraseña->ForeColor = Color::Gray;
+					txt_Name->ForeColor = Color::Gray;
+
 					//Enviando al inicio 
 					Inicio^ temporal = gcnew Inicio(Usuario);
-					temporal->Show();
+					temporal->ShowDialog();
 				}
 				else
 					lbl_contraseña->Text = "ID o Contraseña Incorrecta";

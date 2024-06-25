@@ -6,6 +6,7 @@
 #include "Acerca.h"
 #include "SupervisorClass.h"
 
+
 namespace SIVENALFERR2 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -28,14 +29,12 @@ namespace SIVENALFERR2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			if (Usuario->Nombre_Admin != "0") {
-				lbl_name_user->Text = "Bienvenido Supervisor " + Usuario->Nombre + Usuario->Apellido;
+			if (Usuario) {
+				lbl_name_user->Text = "Bienvenido Supervisor " + Usuario->Nombre + " " + Usuario->Apellido;
 			}
 			else {
 				lbl_name_user->Text = "Bienvenido Administrador ";
 			}
-
-
 		}
 
 	protected:
@@ -82,7 +81,6 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Label^ lbl_name_user;
-
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -288,10 +286,11 @@ namespace SIVENALFERR2 {
 			// 
 			this->panel2->Controls->Add(this->lblFecha);
 			this->panel2->Controls->Add(this->lblHora);
-			this->panel2->Location = System::Drawing::Point(0, 485);
+			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->panel2->Location = System::Drawing::Point(0, 479);
 			this->panel2->Margin = System::Windows::Forms::Padding(3, 120, 3, 3);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(731, 30);
+			this->panel2->Size = System::Drawing::Size(777, 36);
 			this->panel2->TabIndex = 10;
 			// 
 			// lblFecha
@@ -300,7 +299,7 @@ namespace SIVENALFERR2 {
 			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblFecha->ForeColor = System::Drawing::Color::Black;
-			this->lblFecha->Location = System::Drawing::Point(549, 0);
+			this->lblFecha->Location = System::Drawing::Point(548, 4);
 			this->lblFecha->Name = L"lblFecha";
 			this->lblFecha->Size = System::Drawing::Size(106, 29);
 			this->lblFecha->TabIndex = 1;
@@ -315,7 +314,7 @@ namespace SIVENALFERR2 {
 			this->lblHora->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblHora->ForeColor = System::Drawing::Color::Black;
-			this->lblHora->Location = System::Drawing::Point(45, 0);
+			this->lblHora->Location = System::Drawing::Point(44, 4);
 			this->lblHora->Name = L"lblHora";
 			this->lblHora->Size = System::Drawing::Size(91, 29);
 			this->lblHora->TabIndex = 0;
@@ -352,10 +351,10 @@ namespace SIVENALFERR2 {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(146, 27);
+			this->pictureBox1->Location = System::Drawing::Point(144, 74);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(422, 429);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->Size = System::Drawing::Size(400, 402);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 5;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -591,12 +590,14 @@ namespace SIVENALFERR2 {
 		   ctrolRestaurar->Visible = false;
 		   ctrolMax->Visible = true;
 	   }*/
+	public: SupervisorClass^ Usuario = nullptr;
 	private: System::Void ctrolMin_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->WindowState = FormWindowState::Minimized;
 	}
 
 	private: System::Void btn_solicitud_Click(System::Object^ sender, System::EventArgs^ e) {
-		Solicitud^ Formulario = gcnew Solicitud();
+		Usuario = gcnew SupervisorClass;
+		Solicitud^ Formulario = gcnew Solicitud(Usuario);
 		CambiarFormulario(panelContenedor, Formulario);
 	}
 	private: System::Void btn_ajustes_Click(System::Object^ sender, System::EventArgs^ e) {
