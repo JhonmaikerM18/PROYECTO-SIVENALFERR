@@ -4,8 +4,6 @@
 #include "Detalles.h"
 #include "Supervisores.h"
 #include "Acerca.h"
-#include "SupervisorClass.h"
-
 
 namespace SIVENALFERR2 {
 	using namespace System;
@@ -23,18 +21,12 @@ namespace SIVENALFERR2 {
 	private:
 
 	public:
-		Inicio(SupervisorClass^ Usuario)
+		Inicio()
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			if (Usuario) {
-				lbl_name_user->Text = "Bienvenido Supervisor " + Usuario->Nombre + " " + Usuario->Apellido;
-			}
-			else {
-				lbl_name_user->Text = "Bienvenido Administrador ";
-			}
 		}
 
 	protected:
@@ -63,7 +55,7 @@ namespace SIVENALFERR2 {
 
 	private: System::Windows::Forms::Label^ text_superior;
 	private: System::Windows::Forms::PictureBox^ ctrolMax;
-	private: System::Windows::Forms::PictureBox^ ctrolRestaurar;
+
 	private: System::Windows::Forms::PictureBox^ ctrolClose;
 	private: System::Windows::Forms::PictureBox^ ctrolMin;
 
@@ -75,12 +67,14 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Label^ lblFecha;
 	private: System::Windows::Forms::Label^ lblHora;
 	private: System::Windows::Forms::Timer^ Hora;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
+
 	private: System::Windows::Forms::Panel^ panelControlSuperior;
 	private: System::Windows::Forms::Button^ btn_acerca;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Label^ lbl_name_user;
+	private: System::Windows::Forms::PictureBox^ ctrolRestaurar;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -116,13 +110,12 @@ namespace SIVENALFERR2 {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSuperior = (gcnew System::Windows::Forms::Panel());
 			this->panelControlSuperior = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->ctrolRestaurar = (gcnew System::Windows::Forms::PictureBox());
 			this->ctrolClose = (gcnew System::Windows::Forms::PictureBox());
 			this->ctrolMax = (gcnew System::Windows::Forms::PictureBox());
 			this->ctrolMin = (gcnew System::Windows::Forms::PictureBox());
 			this->arrastrarVentanaL1 = (gcnew System::Windows::Forms::Label());
 			this->text_superior = (gcnew System::Windows::Forms::Label());
-			this->ctrolRestaurar = (gcnew System::Windows::Forms::PictureBox());
 			this->Hora = (gcnew System::Windows::Forms::Timer(this->components));
 			this->Menu->SuspendLayout();
 			this->arrastrarVentanaMenu->SuspendLayout();
@@ -132,11 +125,10 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panelSuperior->SuspendLayout();
 			this->panelControlSuperior->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolClose))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Menu
@@ -152,10 +144,10 @@ namespace SIVENALFERR2 {
 			this->Menu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->Menu->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->Menu->Location = System::Drawing::Point(0, 0);
-			this->Menu->MaximumSize = System::Drawing::Size(155, 515);
-			this->Menu->MinimumSize = System::Drawing::Size(43, 515);
+			this->Menu->MaximumSize = System::Drawing::Size(155, 800);
+			this->Menu->MinimumSize = System::Drawing::Size(43, 800);
 			this->Menu->Name = L"Menu";
-			this->Menu->Size = System::Drawing::Size(43, 515);
+			this->Menu->Size = System::Drawing::Size(43, 800);
 			this->Menu->TabIndex = 0;
 			// 
 			// arrastrarVentanaMenu
@@ -284,24 +276,26 @@ namespace SIVENALFERR2 {
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(95)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(203)));
 			this->panel2->Controls->Add(this->lblFecha);
 			this->panel2->Controls->Add(this->lblHora);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel2->Location = System::Drawing::Point(0, 479);
+			this->panel2->Location = System::Drawing::Point(0, 486);
 			this->panel2->Margin = System::Windows::Forms::Padding(3, 120, 3, 3);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(777, 36);
+			this->panel2->Size = System::Drawing::Size(777, 29);
 			this->panel2->TabIndex = 10;
 			// 
 			// lblFecha
 			// 
 			this->lblFecha->AutoSize = true;
-			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblFecha->ForeColor = System::Drawing::Color::Black;
-			this->lblFecha->Location = System::Drawing::Point(548, 4);
+			this->lblFecha->ForeColor = System::Drawing::Color::White;
+			this->lblFecha->Location = System::Drawing::Point(548, 2);
 			this->lblFecha->Name = L"lblFecha";
-			this->lblFecha->Size = System::Drawing::Size(106, 29);
+			this->lblFecha->Size = System::Drawing::Size(94, 25);
 			this->lblFecha->TabIndex = 1;
 			this->lblFecha->Text = L"lblFecha";
 			// 
@@ -311,12 +305,12 @@ namespace SIVENALFERR2 {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lblHora->AutoSize = true;
-			this->lblHora->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblHora->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblHora->ForeColor = System::Drawing::Color::Black;
-			this->lblHora->Location = System::Drawing::Point(44, 4);
+			this->lblHora->ForeColor = System::Drawing::Color::White;
+			this->lblHora->Location = System::Drawing::Point(44, 3);
 			this->lblHora->Name = L"lblHora";
-			this->lblHora->Size = System::Drawing::Size(91, 29);
+			this->lblHora->Size = System::Drawing::Size(80, 25);
 			this->lblHora->TabIndex = 0;
 			this->lblHora->Text = L"lblHora";
 			// 
@@ -350,6 +344,9 @@ namespace SIVENALFERR2 {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(144, 74);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -365,7 +362,6 @@ namespace SIVENALFERR2 {
 			this->panelSuperior->Controls->Add(this->panelControlSuperior);
 			this->panelSuperior->Controls->Add(this->arrastrarVentanaL1);
 			this->panelSuperior->Controls->Add(this->text_superior);
-			this->panelSuperior->Controls->Add(this->ctrolRestaurar);
 			this->panelSuperior->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelSuperior->Location = System::Drawing::Point(43, 0);
 			this->panelSuperior->Name = L"panelSuperior";
@@ -375,7 +371,7 @@ namespace SIVENALFERR2 {
 			// 
 			// panelControlSuperior
 			// 
-			this->panelControlSuperior->Controls->Add(this->pictureBox2);
+			this->panelControlSuperior->Controls->Add(this->ctrolRestaurar);
 			this->panelControlSuperior->Controls->Add(this->ctrolClose);
 			this->panelControlSuperior->Controls->Add(this->ctrolMax);
 			this->panelControlSuperior->Controls->Add(this->ctrolMin);
@@ -385,19 +381,18 @@ namespace SIVENALFERR2 {
 			this->panelControlSuperior->Size = System::Drawing::Size(92, 26);
 			this->panelControlSuperior->TabIndex = 5;
 			// 
-			// pictureBox2
+			// ctrolRestaurar
 			// 
-			this->pictureBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::No;
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(50, 12);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(10, 14);
-			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox2->TabIndex = 6;
-			this->pictureBox2->TabStop = false;
+			this->ctrolRestaurar->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->ctrolRestaurar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ctrolRestaurar.Image")));
+			this->ctrolRestaurar->Location = System::Drawing::Point(31, 2);
+			this->ctrolRestaurar->Name = L"ctrolRestaurar";
+			this->ctrolRestaurar->Size = System::Drawing::Size(31, 23);
+			this->ctrolRestaurar->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->ctrolRestaurar->TabIndex = 12;
+			this->ctrolRestaurar->TabStop = false;
+			this->ctrolRestaurar->Visible = false;
+			this->ctrolRestaurar->Click += gcnew System::EventHandler(this, &Inicio::ctrolRestaurar_Click);
 			// 
 			// ctrolClose
 			// 
@@ -417,7 +412,7 @@ namespace SIVENALFERR2 {
 			// 
 			this->ctrolMax->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->ctrolMax->Cursor = System::Windows::Forms::Cursors::No;
+			this->ctrolMax->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ctrolMax->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ctrolMax.Image")));
 			this->ctrolMax->Location = System::Drawing::Point(30, 0);
 			this->ctrolMax->Name = L"ctrolMax";
@@ -461,14 +456,6 @@ namespace SIVENALFERR2 {
 			this->text_superior->TabIndex = 3;
 			this->text_superior->Text = L"SIVENALFERR | COMEDOR";
 			// 
-			// ctrolRestaurar
-			// 
-			this->ctrolRestaurar->Location = System::Drawing::Point(0, 0);
-			this->ctrolRestaurar->Name = L"ctrolRestaurar";
-			this->ctrolRestaurar->Size = System::Drawing::Size(100, 50);
-			this->ctrolRestaurar->TabIndex = 5;
-			this->ctrolRestaurar->TabStop = false;
-			// 
 			// Hora
 			// 
 			this->Hora->Enabled = true;
@@ -503,11 +490,10 @@ namespace SIVENALFERR2 {
 			this->panelSuperior->ResumeLayout(false);
 			this->panelSuperior->PerformLayout();
 			this->panelControlSuperior->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolClose))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMax))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolMin))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ctrolRestaurar))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -572,39 +558,41 @@ namespace SIVENALFERR2 {
 			//Se cierra el cuadro de dialogo
 		}
 	}
-
-		   //int lx, ly;
+		   int lx, ly;
 	private: System::Void ctrolMax_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*lx = this->Location.X;
+		lx = this->Location.X;
 		ly = this->Location.Y;
 		//this->WindowState = FormWindowState::Maximized;
 		this->Size = System::Windows::Forms::Screen::PrimaryScreen->WorkingArea.Size;
 		this->Location = System::Windows::Forms::Screen::PrimaryScreen->WorkingArea.Location;
 		ctrolRestaurar->Visible = true;
-		ctrolMax->Visible = false;*/
+		ctrolMax->Visible = false;
 	}
-		   /*private: System::Void ctrolRestaurar_Click(System::Object^ sender, System::EventArgs^ e) {
-			//this->WindowState = FormWindowState::Normal;
-		   this->Location = System::Drawing::Point(lx, ly);
-		   this->Size = System::Drawing::Size(820, 515);
-		   ctrolRestaurar->Visible = false;
-		   ctrolMax->Visible = true;
-	   }*/
-	public: SupervisorClass^ Usuario = nullptr;
+
+	private: System::Void ctrolRestaurar_Click(System::Object^ sender, System::EventArgs^ e) {
+		//this->WindowState = FormWindowState::Normal;
+		this->Location = System::Drawing::Point(lx, ly);
+		this->Size = System::Drawing::Size(820, 515);
+		ctrolRestaurar->Visible = false;
+		ctrolMax->Visible = true;
+	}
+
 	private: System::Void ctrolMin_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->WindowState = FormWindowState::Minimized;
 	}
 
 	private: System::Void btn_solicitud_Click(System::Object^ sender, System::EventArgs^ e) {
-		Usuario = gcnew SupervisorClass;
-		Solicitud^ Formulario = gcnew Solicitud(Usuario);
+
+		Solicitud^ Formulario = gcnew Solicitud();
 		CambiarFormulario(panelContenedor, Formulario);
 	}
 	private: System::Void btn_ajustes_Click(System::Object^ sender, System::EventArgs^ e) {
+
 		Ajustes^ Formulario = gcnew Ajustes();
 		CambiarFormulario(panelContenedor, Formulario);
 	}
 	private: System::Void btn_detalles_Click(System::Object^ sender, System::EventArgs^ e) {
+
 		Detalles^ Formulario = gcnew Detalles();
 		CambiarFormulario(panelContenedor, Formulario);
 	}
@@ -626,7 +614,6 @@ namespace SIVENALFERR2 {
 			this->Location = System::Drawing::Point(this->Location.X + e->X - arrastrarVentanaL2->Left, this->Location.Y + e->Y - arrastrarVentanaL2->Top);
 		}
 	}
-
 	private: System::Void Hora_Tick(System::Object^ sender, System::EventArgs^ e) {
 		lblHora->Text = System::DateTime::Now.ToLongTimeString();
 		lblFecha->Text = System::DateTime::Now.ToShortDateString();

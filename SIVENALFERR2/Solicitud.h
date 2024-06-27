@@ -1,6 +1,6 @@
 #pragma once
-#include "Solicitando.h"
-#include "SupervisorClass.h"
+#include "Login.h"
+
 namespace SIVENALFERR2 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -15,15 +15,12 @@ namespace SIVENALFERR2 {
 	public ref class Solicitud : public System::Windows::Forms::Form
 	{
 	public:
-		Solicitud(SupervisorClass^ Usuario)
+		Solicitud()
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			if (Usuario) {
-				txt_titulo->Text = "Hola " + Usuario->Apellido;
-			}
 		}
 
 	protected:
@@ -42,30 +39,9 @@ namespace SIVENALFERR2 {
 
 	protected:
 
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Label^ label2;
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -86,9 +62,9 @@ namespace SIVENALFERR2 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
+			//
 			// txt_titulo
-			// 
+			//
 			this->txt_titulo->AutoSize = true;
 			this->txt_titulo->BackColor = System::Drawing::Color::Transparent;
 			this->txt_titulo->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -99,9 +75,9 @@ namespace SIVENALFERR2 {
 			this->txt_titulo->Size = System::Drawing::Size(290, 32);
 			this->txt_titulo->TabIndex = 0;
 			this->txt_titulo->Text = L"Solicitud de Comidas";
-			// 
+			//
 			// button1
-			// 
+			//
 			this->button1->BackColor = System::Drawing::Color::White;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -113,17 +89,17 @@ namespace SIVENALFERR2 {
 			this->button1->Text = L"Si";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Solicitud::button1_Click);
-			// 
+			//
 			// dataGridView1
-			// 
+			//
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(12, 87);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(442, 313);
+			this->dataGridView1->Size = System::Drawing::Size(517, 349);
 			this->dataGridView1->TabIndex = 2;
-			// 
+			//
 			// label2
-			// 
+			//
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -132,9 +108,9 @@ namespace SIVENALFERR2 {
 			this->label2->Size = System::Drawing::Size(206, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"¿Desea solicitar menus\?";
-			// 
+			//
 			// Solicitud
-			// 
+			//
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
@@ -149,11 +125,10 @@ namespace SIVENALFERR2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Solicitando^ temporal = gcnew Solicitando();
+		Login^ temporal = gcnew Login();
 		temporal->ShowDialog();
 	}
 	};

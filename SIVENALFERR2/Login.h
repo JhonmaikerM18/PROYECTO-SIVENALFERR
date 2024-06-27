@@ -1,6 +1,6 @@
 #pragma once
-#include "Inicio.h"
-#include "SupervisorClass.h"
+#include "Solicitando.h"
+
 namespace SIVENALFERR2 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -8,7 +8,6 @@ namespace SIVENALFERR2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace System::Data::SqlClient;
 	/// <summary>
 	/// Resumen de Login
 	/// </summary>
@@ -258,7 +257,6 @@ namespace SIVENALFERR2 {
 		}
 #pragma endregion
 		//Variable global de usuario
-	public: SupervisorClass^ Usuario = nullptr;
 	private: System::Void btn_cerrar_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
@@ -271,50 +269,11 @@ namespace SIVENALFERR2 {
 			lbl_contraseña->Text = "Llene todo correctamente";
 		}
 		else if (txt_Name->Text == "0" || txt_contraseña->Text == "") {
-			Usuario = gcnew SupervisorClass;
-			Inicio^ temporal = gcnew Inicio(Usuario);
-			temporal->Show();
+			Solicitando^ temporal = gcnew Solicitando();
+			temporal->ShowDialog();
 		}
 		else {
-			try {
-				String^ string_Conexion = "Data Source=ADMINISTRADOR\\SQLEXPRESS;Initial Catalog=DB_SIVENALFERR;Integrated Security=True;Encrypt=False";
-				SqlConnection SQL_Open(string_Conexion);
-				SQL_Open.Open();
-				String^ SQL_login = "SELECT * FROM Supervisores WHERE Nombre=@name AND Password=@pwd";
-				SqlCommand comandos(SQL_login, % SQL_Open);
-				comandos.Parameters->AddWithValue("@name", Name);
-				comandos.Parameters->AddWithValue("@pwd", password);
 
-				SqlDataReader^ reader = comandos.ExecuteReader();
-				if (reader->Read()) {
-					// Crear una objeto Usuario para asignar valores desde la base de datos
-					Usuario = gcnew SupervisorClass;
-					Usuario->SupervisorID = reader->GetInt32(0);
-					Usuario->Nombre = reader->GetString(1);
-					Usuario->Apellido = reader->GetString(2);
-					Usuario->AreaTrabajo = reader->GetString(3);
-					Usuario->NivelJerarquico = reader->GetInt32(4);
-					Usuario->CantidadTrabajadores = reader->GetInt32(5);
-					Usuario->Password = reader->GetString(6);
-					// Limpiar los campos de texto en el formulario de inicio
-					lbl_contraseña->Text = "";
-
-					txt_Name->Text = "Jose";
-					txt_contraseña->Text = "*****";
-
-					txt_contraseña->ForeColor = Color::Gray;
-					txt_Name->ForeColor = Color::Gray;
-
-					//Enviando al inicio 
-					Inicio^ temporal = gcnew Inicio(Usuario);
-					temporal->ShowDialog();
-				}
-				else
-					lbl_contraseña->Text = "ID o Contraseña Incorrecta";
-			}
-			catch (Exception^ ex) {
-				MessageBox::Show("Error al conectar con la base de datos: " + ex->Message, "Error de conexión");
-			}
 		}
 	}
 	private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {

@@ -123,13 +123,12 @@
     <ClCompile Include="Acerca.cpp" />
     <ClCompile Include="Ajustes.cpp" />
     <ClCompile Include="Detalles.cpp" />
-    <ClCompile Include="registroSupervisor.cpp" />
+    <ClCompile Include="Supervisores.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Solicitando.cpp" />
     <ClCompile Include="Solicitud.cpp" />
-    <ClCompile Include="SupervisorClass.cpp" />
-    <ClCompile Include="Supervisores.cpp" />
+    <ClCompile Include="UsuarioSupervisor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Acerca.h">
@@ -141,7 +140,7 @@
     <ClInclude Include="Detalles.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="registroSupervisor.h">
+    <ClInclude Include="Supervisores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inicio.h">
@@ -156,10 +155,7 @@
     <ClInclude Include="Solicitud.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="SupervisorClass.h" />
-    <ClInclude Include="Supervisores.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="UsuarioSupervisor.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Acerca.resx">
@@ -171,8 +167,8 @@
     <EmbeddedResource Include="Detalles.resx">
       <DependentUpon>Detalles.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="registroSupervisor.resx">
-      <DependentUpon>registroSupervisor.h</DependentUpon>
+    <EmbeddedResource Include="Supervisores.resx">
+      <DependentUpon>Supervisores.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
@@ -185,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Solicitud.resx">
       <DependentUpon>Solicitud.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Supervisores.resx">
-      <DependentUpon>Supervisores.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

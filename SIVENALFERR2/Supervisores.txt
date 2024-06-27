@@ -1,0 +1,1 @@
+SupervisorID,Nombre,Apellido,Edad,Sexo,NivelJerarquico,AreaTrabajo,CantidadTrabajadores

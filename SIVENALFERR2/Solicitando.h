@@ -1,5 +1,5 @@
 #pragma once
-#include <Windows.h>
+
 #define TIEMPO_MAX_SEGUNDOS 120
 namespace SIVENALFERR2 {
 	using namespace System;
@@ -303,7 +303,7 @@ namespace SIVENALFERR2 {
 			this->lbl_temporizador->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->lbl_temporizador->ForeColor = System::Drawing::Color::Red;
-			this->lbl_temporizador->Location = System::Drawing::Point(337, 128);
+			this->lbl_temporizador->Location = System::Drawing::Point(347, 128);
 			this->lbl_temporizador->Name = L"lbl_temporizador";
 			this->lbl_temporizador->Size = System::Drawing::Size(71, 25);
 			this->lbl_temporizador->TabIndex = 10;
@@ -316,8 +316,9 @@ namespace SIVENALFERR2 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->lbl_menusSelecionados->Location = System::Drawing::Point(492, 23);
 			this->lbl_menusSelecionados->Name = L"lbl_menusSelecionados";
-			this->lbl_menusSelecionados->Size = System::Drawing::Size(0, 20);
+			this->lbl_menusSelecionados->Size = System::Drawing::Size(18, 20);
 			this->lbl_menusSelecionados->TabIndex = 8;
+			this->lbl_menusSelecionados->Text = L"0";
 			// 
 			// label7
 			// 
@@ -563,7 +564,6 @@ namespace SIVENALFERR2 {
 			this->lbl_temporizador->Text = String::Format(L"{0}:{1}", minutos, segundos);
 		if (timeLeft == 0) {
 			// El tiempo ha expirado
-			MessageBox::Show("El tiempo de solicitud acabo", "Atención", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			Temporizador->Stop(); // Detener el temporizador
 		}
 
