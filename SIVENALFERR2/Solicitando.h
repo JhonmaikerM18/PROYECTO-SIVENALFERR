@@ -1,4 +1,5 @@
 #pragma once
+#include "Supervisores.h"
 
 #define TIEMPO_MAX_SEGUNDOS 120
 namespace SIVENALFERR2 {
@@ -15,7 +16,7 @@ namespace SIVENALFERR2 {
 	public ref class Solicitando : public System::Windows::Forms::Form
 	{
 	public:
-		Solicitando(void)
+		Solicitando(void/*String^ Nombre, String^ Apellido, String^ Trabajadores*/)
 		{
 			InitializeComponent();
 			//
@@ -37,8 +38,6 @@ namespace SIVENALFERR2 {
 
 	protected:
 
-
-
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 
@@ -54,7 +53,6 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Button^ btn_solicitar;
 	private: System::Windows::Forms::Label^ lbl_temporizador;
 
-
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ lblFechaA;
@@ -66,39 +64,23 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label11;
 
-
 	private: System::Windows::Forms::TextBox^ txt_vegetariano;
 	private: System::Windows::Forms::TextBox^ txt_regular;
 	private: System::Windows::Forms::TextBox^ txt_dieta;
 	private: System::Windows::Forms::Button^ btn_verificar;
 	private: System::Windows::Forms::Timer^ Temporizador;
 
-
-
-
-
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-
-
+		///
+	public:
+		property String^ Nombre_Supervisor_Solicitud;
+		property String^ Apellido_Supervisor_Solicitud;
+		property String^ Trabajadores_Supervisor_Solicitud;
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -142,9 +124,9 @@ namespace SIVENALFERR2 {
 			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
-			// 
+			//
 			// label5
-			// 
+			//
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -153,9 +135,9 @@ namespace SIVENALFERR2 {
 			this->label5->Size = System::Drawing::Size(77, 18);
 			this->label5->TabIndex = 1;
 			this->label5->Text = L"Regular";
-			// 
+			//
 			// pictureBox3
-			// 
+			//
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->Location = System::Drawing::Point(4, 3);
 			this->pictureBox3->Name = L"pictureBox3";
@@ -163,9 +145,9 @@ namespace SIVENALFERR2 {
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox3->TabIndex = 0;
 			this->pictureBox3->TabStop = false;
-			// 
+			//
 			// label4
-			// 
+			//
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -174,9 +156,9 @@ namespace SIVENALFERR2 {
 			this->label4->Size = System::Drawing::Size(54, 18);
 			this->label4->TabIndex = 1;
 			this->label4->Text = L"Dieta";
-			// 
+			//
 			// pictureBox2
-			// 
+			//
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(3, 4);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -184,9 +166,9 @@ namespace SIVENALFERR2 {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 0;
 			this->pictureBox2->TabStop = false;
-			// 
+			//
 			// panelVegetariano
-			// 
+			//
 			this->panelVegetariano->Controls->Add(this->txt_vegetariano);
 			this->panelVegetariano->Controls->Add(this->pictureBox1);
 			this->panelVegetariano->Controls->Add(this->label3);
@@ -194,9 +176,9 @@ namespace SIVENALFERR2 {
 			this->panelVegetariano->Name = L"panelVegetariano";
 			this->panelVegetariano->Size = System::Drawing::Size(222, 69);
 			this->panelVegetariano->TabIndex = 0;
-			// 
+			//
 			// txt_vegetariano
-			// 
+			//
 			this->txt_vegetariano->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txt_vegetariano->Location = System::Drawing::Point(91, 34);
 			this->txt_vegetariano->Name = L"txt_vegetariano";
@@ -204,9 +186,9 @@ namespace SIVENALFERR2 {
 			this->txt_vegetariano->TabIndex = 2;
 			this->txt_vegetariano->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Solicitando::txt_vegetariano_KeyPress);
 			this->txt_vegetariano->Leave += gcnew System::EventHandler(this, &Solicitando::txt_vegetariano_Leave);
-			// 
+			//
 			// pictureBox1
-			// 
+			//
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(5, 3);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -214,9 +196,9 @@ namespace SIVENALFERR2 {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			// 
+			//
 			// label3
-			// 
+			//
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -225,9 +207,9 @@ namespace SIVENALFERR2 {
 			this->label3->Size = System::Drawing::Size(116, 18);
 			this->label3->TabIndex = 1;
 			this->label3->Text = L"Vegetariano";
-			// 
+			//
 			// groupBox1
-			// 
+			//
 			this->groupBox1->Controls->Add(this->btn_verificar);
 			this->groupBox1->Controls->Add(this->label11);
 			this->groupBox1->Controls->Add(this->lbl_trabajadores);
@@ -248,9 +230,9 @@ namespace SIVENALFERR2 {
 			this->groupBox1->TabIndex = 9;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Menú de opciones";
-			// 
+			//
 			// btn_verificar
-			// 
+			//
 			this->btn_verificar->BackColor = System::Drawing::Color::Coral;
 			this->btn_verificar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_verificar->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -263,20 +245,20 @@ namespace SIVENALFERR2 {
 			this->btn_verificar->Text = L"Verificar";
 			this->btn_verificar->UseVisualStyleBackColor = false;
 			this->btn_verificar->Click += gcnew System::EventHandler(this, &Solicitando::btn_verificar_Click);
-			// 
+			//
 			// label11
-			// 
+			//
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(281, 94);
+			this->label11->Location = System::Drawing::Point(292, 94);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(197, 18);
 			this->label11->TabIndex = 11;
 			this->label11->Text = L"Tiempo restante de solicitud:";
-			// 
+			//
 			// lbl_trabajadores
-			// 
+			//
 			this->lbl_trabajadores->AutoSize = true;
 			this->lbl_trabajadores->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -285,9 +267,9 @@ namespace SIVENALFERR2 {
 			this->lbl_trabajadores->Size = System::Drawing::Size(36, 20);
 			this->lbl_trabajadores->TabIndex = 10;
 			this->lbl_trabajadores->Text = L"115";
-			// 
+			//
 			// label10
-			// 
+			//
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -296,21 +278,21 @@ namespace SIVENALFERR2 {
 			this->label10->Size = System::Drawing::Size(173, 18);
 			this->label10->TabIndex = 9;
 			this->label10->Text = L"Trabajadores a su cargo:";
-			// 
+			//
 			// lbl_temporizador
-			// 
+			//
 			this->lbl_temporizador->AutoSize = true;
 			this->lbl_temporizador->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->lbl_temporizador->ForeColor = System::Drawing::Color::Red;
-			this->lbl_temporizador->Location = System::Drawing::Point(347, 128);
+			this->lbl_temporizador->Location = System::Drawing::Point(364, 132);
 			this->lbl_temporizador->Name = L"lbl_temporizador";
-			this->lbl_temporizador->Size = System::Drawing::Size(71, 25);
+			this->lbl_temporizador->Size = System::Drawing::Size(54, 25);
 			this->lbl_temporizador->TabIndex = 10;
-			this->lbl_temporizador->Text = L"tempo";
-			// 
+			this->lbl_temporizador->Text = L"2:00";
+			//
 			// lbl_menusSelecionados
-			// 
+			//
 			this->lbl_menusSelecionados->AutoSize = true;
 			this->lbl_menusSelecionados->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -319,9 +301,9 @@ namespace SIVENALFERR2 {
 			this->lbl_menusSelecionados->Size = System::Drawing::Size(18, 20);
 			this->lbl_menusSelecionados->TabIndex = 8;
 			this->lbl_menusSelecionados->Text = L"0";
-			// 
+			//
 			// label7
-			// 
+			//
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -330,9 +312,9 @@ namespace SIVENALFERR2 {
 			this->label7->Size = System::Drawing::Size(138, 18);
 			this->label7->TabIndex = 7;
 			this->label7->Text = L"Comida solicitadas:";
-			// 
+			//
 			// button2
-			// 
+			//
 			this->button2->BackColor = System::Drawing::Color::Coral;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -345,9 +327,9 @@ namespace SIVENALFERR2 {
 			this->button2->Text = L"Cancelar";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Solicitando::button2_Click);
-			// 
+			//
 			// btn_solicitar
-			// 
+			//
 			this->btn_solicitar->BackColor = System::Drawing::Color::Coral;
 			this->btn_solicitar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_solicitar->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -360,9 +342,9 @@ namespace SIVENALFERR2 {
 			this->btn_solicitar->Text = L"Solicitar";
 			this->btn_solicitar->UseVisualStyleBackColor = false;
 			this->btn_solicitar->Visible = false;
-			// 
+			//
 			// panel3
-			// 
+			//
 			this->panel3->Controls->Add(this->txt_regular);
 			this->panel3->Controls->Add(this->label5);
 			this->panel3->Controls->Add(this->pictureBox3);
@@ -370,9 +352,9 @@ namespace SIVENALFERR2 {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(222, 71);
 			this->panel3->TabIndex = 4;
-			// 
+			//
 			// txt_regular
-			// 
+			//
 			this->txt_regular->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txt_regular->Location = System::Drawing::Point(91, 34);
 			this->txt_regular->Name = L"txt_regular";
@@ -380,9 +362,9 @@ namespace SIVENALFERR2 {
 			this->txt_regular->TabIndex = 3;
 			this->txt_regular->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Solicitando::txt_regular_KeyPress);
 			this->txt_regular->Leave += gcnew System::EventHandler(this, &Solicitando::txt_regular_Leave);
-			// 
+			//
 			// panel2
-			// 
+			//
 			this->panel2->Controls->Add(this->txt_dieta);
 			this->panel2->Controls->Add(this->label4);
 			this->panel2->Controls->Add(this->pictureBox2);
@@ -390,9 +372,9 @@ namespace SIVENALFERR2 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(222, 69);
 			this->panel2->TabIndex = 2;
-			// 
+			//
 			// txt_dieta
-			// 
+			//
 			this->txt_dieta->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txt_dieta->Location = System::Drawing::Point(91, 31);
 			this->txt_dieta->Name = L"txt_dieta";
@@ -400,9 +382,9 @@ namespace SIVENALFERR2 {
 			this->txt_dieta->TabIndex = 4;
 			this->txt_dieta->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Solicitando::txt_dieta_KeyPress);
 			this->txt_dieta->Leave += gcnew System::EventHandler(this, &Solicitando::txt_dieta_Leave);
-			// 
+			//
 			// label2
-			// 
+			//
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -411,9 +393,9 @@ namespace SIVENALFERR2 {
 			this->label2->Size = System::Drawing::Size(175, 25);
 			this->label2->TabIndex = 11;
 			this->label2->Text = L"Área de Solicitud";
-			// 
+			//
 			// label6
-			// 
+			//
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -422,9 +404,9 @@ namespace SIVENALFERR2 {
 			this->label6->Size = System::Drawing::Size(88, 16);
 			this->label6->TabIndex = 12;
 			this->label6->Text = L"Fecha Actual:";
-			// 
+			//
 			// lblFechaA
-			// 
+			//
 			this->lblFechaA->AutoSize = true;
 			this->lblFechaA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -433,14 +415,14 @@ namespace SIVENALFERR2 {
 			this->lblFechaA->Size = System::Drawing::Size(71, 16);
 			this->lblFechaA->TabIndex = 13;
 			this->lblFechaA->Text = L"12/02/2022";
-			// 
+			//
 			// Temporizador
-			// 
+			//
 			this->Temporizador->Interval = 1000;
 			this->Temporizador->Tick += gcnew System::EventHandler(this, &Solicitando::Temporizador_Tick);
-			// 
+			//
 			// Solicitando
-			// 
+			//
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
@@ -467,12 +449,12 @@ namespace SIVENALFERR2 {
 			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 		int menu_vegetariano = 0;
 		int menu_regular = 0;
 		int menu_dieta = 0;
+		// En el formulario "FormularioPrincipal":
 
 		void calcularResultado() {
 			String^ temp1 = this->txt_vegetariano->Text;
@@ -551,7 +533,10 @@ namespace SIVENALFERR2 {
 		btn_verificar->Visible = false;
 	}
 	private: System::Void Solicitando_Load(System::Object^ sender, System::EventArgs^ e) {
+		lblFechaA->Text = DateTime::Now.ToShortDateString();
+		Supervisores^ temp = gcnew Supervisores();
 		Temporizador->Start();
+		lbl_trabajadores->Text = temp->Trabajadores_Supervisor_Solicitud;
 	}
 		   int timeLeft = TIEMPO_MAX_SEGUNDOS; // Constante con valor por defecto 120 segundos
 	private: System::Void Temporizador_Tick(System::Object^ sender, System::EventArgs^ e) {
@@ -566,7 +551,6 @@ namespace SIVENALFERR2 {
 			// El tiempo ha expirado
 			Temporizador->Stop(); // Detener el temporizador
 		}
-
 	}
 	};
 }

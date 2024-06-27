@@ -125,7 +125,6 @@
     <ClCompile Include="Detalles.cpp" />
     <ClCompile Include="Supervisores.cpp" />
     <ClCompile Include="Inicio.cpp" />
-    <ClCompile Include="Login.cpp" />
     <ClCompile Include="Solicitando.cpp" />
     <ClCompile Include="Solicitud.cpp" />
     <ClCompile Include="UsuarioSupervisor.cpp" />
@@ -144,9 +143,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inicio.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Solicitando.h">
@@ -172,9 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Solicitando.resx">
       <DependentUpon>Solicitando.h</DependentUpon>

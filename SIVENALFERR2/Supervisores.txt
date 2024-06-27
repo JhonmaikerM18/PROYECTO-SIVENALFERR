@@ -1,1 +1,8 @@
-SupervisorID,Nombre,Apellido,Edad,Sexo,NivelJerarquico,AreaTrabajo,CantidadTrabajadores
+7
+Jhonmaiker
+Machado
+18
+Masculino
+2
+Programación
+120

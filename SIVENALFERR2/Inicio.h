@@ -73,7 +73,7 @@ namespace SIVENALFERR2 {
 	private: System::Windows::Forms::Button^ btn_acerca;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Label^ lbl_name_user;
+
 	private: System::Windows::Forms::PictureBox^ ctrolRestaurar;
 
 	private: System::ComponentModel::IContainer^ components;
@@ -106,7 +106,6 @@ namespace SIVENALFERR2 {
 			this->lblHora = (gcnew System::Windows::Forms::Label());
 			this->Tiempo_menu = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelContenedor = (gcnew System::Windows::Forms::Panel());
-			this->lbl_name_user = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSuperior = (gcnew System::Windows::Forms::Panel());
 			this->panelControlSuperior = (gcnew System::Windows::Forms::Panel());
@@ -289,6 +288,7 @@ namespace SIVENALFERR2 {
 			// 
 			// lblFecha
 			// 
+			this->lblFecha->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->lblFecha->AutoSize = true;
 			this->lblFecha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -322,7 +322,6 @@ namespace SIVENALFERR2 {
 			// panelContenedor
 			// 
 			this->panelContenedor->BackColor = System::Drawing::Color::Transparent;
-			this->panelContenedor->Controls->Add(this->lbl_name_user);
 			this->panelContenedor->Controls->Add(this->pictureBox1);
 			this->panelContenedor->Controls->Add(this->panel2);
 			this->panelContenedor->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -331,24 +330,13 @@ namespace SIVENALFERR2 {
 			this->panelContenedor->Size = System::Drawing::Size(777, 515);
 			this->panelContenedor->TabIndex = 1;
 			// 
-			// lbl_name_user
-			// 
-			this->lbl_name_user->AutoSize = true;
-			this->lbl_name_user->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbl_name_user->Location = System::Drawing::Point(6, 47);
-			this->lbl_name_user->Name = L"lbl_name_user";
-			this->lbl_name_user->Size = System::Drawing::Size(179, 24);
-			this->lbl_name_user->TabIndex = 11;
-			this->lbl_name_user->Text = L"Nombre_Supervisor";
-			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(144, 74);
+			this->pictureBox1->Location = System::Drawing::Point(148, 50);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(400, 402);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -485,7 +473,6 @@ namespace SIVENALFERR2 {
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->panelContenedor->ResumeLayout(false);
-			this->panelContenedor->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelSuperior->ResumeLayout(false);
 			this->panelSuperior->PerformLayout();
